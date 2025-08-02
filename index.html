@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petar Petrushev</title>
+      <meta name="description" content="👋 Hi! I'm a developer.">
+
+
+
+<!-- open graph (facebook, discord, etc) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://petarpetrushev.me.uk">
+<meta property="og:title" content="Petar Petrushev">
+<meta property="og:description" content="👋 Hi! I'm a developer.">
+<meta property="og:image" content="https://petarpetrushev.me.uk/embed.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+
+<!-- twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Petar Petrushev">
+<meta name="twitter:description" content="👋 Hi! I'm a developer.">
+<meta name="twitter:image" content="https://petarpetrushev.me.uk/embed.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadein {
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        html{
+            background-color: black;
+        }
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #111111;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+            background-size: 30px 30px;
+            opacity: 0;
+            overflow-x: hidden;
+            background-position: -5px -5px;
+            margin:0;
+            font-family: "Cal Sans", sans-serif;
+            animation-name: fadein;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+            animation-duration: 0.3s;
+            color: #e3e3ee;
+            letter-spacing:1px;
+            min-height: 100vh;
+        }
+        #pfp{
+            border-radius: 50%;
+        }
+        canvas {
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background-color: #111111;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        h1{
+            pointer-events: none;
+        }
+        #pfp{
+            margin-top:150px;
+        }
+        .noe{
+            pointer-events: none;
+        }
+        div#langlist {
+    font-size: 51px;
+    letter-spacing: 15px;
+    margin-top: 20px;
+}
+#social {
+    width: 400px;
+    height: 80px;
+    background-color: rgba(17, 17, 17, 0.466);
+    border-radius: 12px;
+    backdrop-filter: blur(15px);
+    position: absolute;
+    bottom: 50px;
+    left: max(0px, calc(50% - 200px));
+    display: flex
+;
+    font-size: 34px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+#social a{
+    color:#e0e0e0;
+    text-decoration: none;
+    transition: 0.2s;
+}
+#social a:hover{
+    color:#ffffff;
+    text-decoration: none;
+}
+hero{
+    display: block;
+    height:100vh;
+}
+#projectcont {
+    display: flex
+;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:5px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}.project {
+    width: 300px;
+    min-height: 350px;
+    border-width: 0px;
+    border-style: solid;
+    border-color:#000000;
+    border-radius: 12px;
+    transition:0.2s;
+    cursor: pointer;
+    overflow: hidden;
+    background: #191919;
+}.project img {
+    width: 100%;
+    height: 164px;
+}.project span {
+    font-size: 22px;
+    padding: 7px;
+    display: block;
+}.project p {
+    width: 95%;
+    /* position: relative; */
+    /* left: 0; */
+    font-size: 16px;
+    font-weight: 500;
+}
+.project:hover{
+    transform: scale(105%);
+    border-width: 2px;
+}
+    </style>
+    <script defer src="fluidscript.js"></script>
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=alternate_email" />
+</head>
+<body>    <canvas></canvas>
+
+    <hero class="noe">
+    <center class="noe">
+       <img src="pfp.png" id="pfp" alt="Profile Picture"/>
+        <h1>👋 Hi, I'm Petar.</h1><br><br>
+        <span>I use</span><br>
+        <div id="langlist"><i class="devicon-php-plain colored"></i><i class="devicon-html5-plain colored"></i><i class="devicon-javascript-plain colored"></i><i class="devicon-css3-plain colored"></i><i class="devicon-typescript-plain colored"></i><i class="devicon-java-plain colored"></i><i class="devicon-python-plain colored"></i></div>
+    </center>
+
+    </hero>    <div id="social">
+        <a href='https://github.com/PetarPetrushev' title="Github"><i class="devicon-github-original"></i></a>
+       <a href='mailto:me@petarpetrushev.me.uk' title="Email"><span style="
+    font-size: 34px;
+    position: relative;
+    top: 2px;
+" class="material-symbols-rounded">
+alternate_email
+</span></a>
+    
+    </div>
+    <center>
+        <br><br>
+<img src="https://camo.githubusercontent.com/13a324957ed4e733e1a31e7c73bdeb47c70ad60a3dbc4c1b7632c313e6ecfe23/68747470733a2f2f73747265616b2d73746174732e64656d6f6c61622e636f6d3f757365723d5065746172506574727573686576266c6f63616c653d656e266d6f64653d6461696c79267468656d653d6769746875625f6461726b26686964655f626f726465723d7472756526626f726465725f7261646975733d35266f726465723d33" alt="Github stats"/>
+
+<br><br>
+<img src='https://camo.githubusercontent.com/9e50d82976c6796d51a4475955b4d83c413b293305a8134bd4e33fe0d1013bc9/68747470733a2f2f76697369746f722d62616467652e6c616f62692e6963752f62616467653f706167655f69643d50657461725065747275736865762e5065746172506574727573686576266c6566745f636f6c6f723d67726179266c6566745f746578743d56697369746f7273' alt="visitor count"/>
+
+
+<br><br>
+
+<h2>My Projects</h2>
+<div id="projectcont">
+<div class="project" onclick="window.open('https://myemailhosts.com','_blank')">
+    <img src="https://myemailhosts.com/embedimg.png" alt="myemailhosts advert"/>
+    <span>MyEmailHosts.com</span>
+    <p>MyEmailHosts.com offers reliable and secure email hosting solutions for businesses.</p>
+</div>
+
+<div class="project" onclick="window.open('https://bytebase.me','_blank')">
+    <img src="https://cdn.bytebase.me/bytebase-splash.png" alt="bytebase advert"/>
+    <span>ByteBase.me</span>
+    <p>ByteBase.me offers reliable and secure hosting solutions for game servers, web hosting, databases, and more.</p>
+</div>
+
+</div>
+<br><br><br>
+</center>
+</body>
+</html>

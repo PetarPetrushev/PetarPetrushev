@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Petar Petrushev</title>
       <meta name="description" content="👋 Hi! I'm a developer.">
 
@@ -151,11 +150,34 @@ hero{
 .project:hover{
     transform: scale(105%);
     border-width: 2px;
+}div#down {
+    background: #aaaaaa63;
+    width: 120px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    align-content: center;
+    display: flex
+;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 47px;
+    border-radius: 12px;
+    position: absolute;
+    bottom: 161px;
+    left: max(0px, calc(50% - 60px));
+    cursor: pointer;
+    transition: 0.3s;
+}
+.hidden{
+    pointer-events: none;
+    opacity:0;
 }
     </style>
     <script defer src="fluidscript.js"></script>
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=alternate_email" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=alternate_email,arrow_circle_down" />
 </head>
 <body>    <canvas></canvas>
 
@@ -167,7 +189,11 @@ hero{
         <div id="langlist"><i class="devicon-php-plain colored"></i><i class="devicon-html5-plain colored"></i><i class="devicon-javascript-plain colored"></i><i class="devicon-css3-plain colored"></i><i class="devicon-typescript-plain colored"></i><i class="devicon-java-plain colored"></i><i class="devicon-python-plain colored"></i></div>
     </center>
 
-    </hero>    <div id="social">
+    </hero><div id="down" class='hidden' onclick="window.scrollTo({ top: window.visualViewport.height, behavior: 'smooth' })"><span style="
+    font-size: 34px; position: realtive;top:3px;
+" class="material-symbols-rounded">
+arrow_circle_down
+</span></div>    <div id="social">
         <a href='https://github.com/PetarPetrushev' title="Github"><i class="devicon-github-original"></i></a>
        <a href='mailto:me@petarpetrushev.me.uk' title="Email"><span style="
     font-size: 34px;
@@ -206,4 +232,10 @@ alternate_email
 <br><br><br>
 </center>
 </body>
+<script>
+document.body.addEventListener('touchstart', (e) => {
+  document.getElementById('down').classList.remove('hidden')
+})
+
+</script>
 </html>

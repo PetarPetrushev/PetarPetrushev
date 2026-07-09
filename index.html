@@ -1,241 +1,686 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Petar Petrushev</title>
-      <meta name="description" content="👋 Hi! I'm a developer.">
-
-
-
-<!-- open graph (facebook, discord, etc) -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://petarpetrushev.me.uk">
-<meta property="og:title" content="Petar Petrushev">
-<meta property="og:description" content="👋 Hi! I'm a developer.">
-<meta property="og:image" content="https://petarpetrushev.me.uk/embed.png">
-<meta property="og:image:width" content="1280">
-<meta property="og:image:height" content="720">
-
-<!-- twitter card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Petar Petrushev">
-<meta name="twitter:description" content="👋 Hi! I'm a developer.">
-<meta name="twitter:image" content="https://petarpetrushev.me.uk/embed.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
-    <style>
-        @keyframes fadein {
-            0%{
-                opacity: 0;
-            }
-            100%{
-                opacity: 1;
-            }
-        }
-        html{
-            background-color: black;
-        }
-        body {
-            width: 100%;
-            height: 100%;
-            background-color: #111111;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-            background-size: 30px 30px;
-            opacity: 0;
-            overflow-x: hidden;
-            background-position: -5px -5px;
-            margin:0;
-            font-family: "Cal Sans", sans-serif;
-            animation-name: fadein;
-            animation-delay: 0.5s;
-            animation-fill-mode: forwards;
-            animation-duration: 0.3s;
-            color: #e3e3ee;
-            letter-spacing:1px;
-            min-height: 100vh;
-        }
-        #pfp{
-            border-radius: 50%;
-        }
-        canvas {
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            background-color: #111111;
-            position: absolute;
-            top:0;
-            left:0;
-        }
-        h1{
-            pointer-events: none;
-        }
-        #pfp{
-            margin-top:150px;
-        }
-        .noe{
-            pointer-events: none;
-        }
-        div#langlist {
-    font-size: 51px;
-    letter-spacing: 15px;
-    margin-top: 20px;
-}
-#social {
-    width: 400px;
-    height: 80px;
-    background-color: rgba(17, 17, 17, 0.466);
-    border-radius: 12px;
-    backdrop-filter: blur(15px);
-    position: absolute;
-    bottom: 50px;
-    left: max(0px, calc(50% - 200px));
-    display: flex
-;
-    font-size: 34px;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-}
-#social a{
-    color:#e0e0e0;
-    text-decoration: none;
-    transition: 0.2s;
-}
-#social a:hover{
-    color:#ffffff;
-    text-decoration: none;
-}
-hero{
-    display: block;
-    height:100vh;
-}
-#projectcont {
-    display: flex
-;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap:5px;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-}.project {
-    width: 300px;
-    min-height: 350px;
-    border-width: 0px;
-    border-style: solid;
-    border-color:#000000;
-    border-radius: 12px;
-    transition:0.2s;
-    cursor: pointer;
-    overflow: hidden;
-    background: #191919;
-}.project img {
-    width: 100%;
-    height: 164px;
-}.project span {
-    font-size: 22px;
-    padding: 7px;
-    display: block;
-}.project p {
-    width: 95%;
-    /* position: relative; */
-    /* left: 0; */
-    font-size: 16px;
-    font-weight: 500;
-}
-.project:hover{
-    transform: scale(105%);
-    border-width: 2px;
-}div#down {
-    background: #aaaaaa63;
-    width: 120px;
-    backdrop-filter: blur(10px);
-    text-align: center;
-    align-content: center;
-    display: flex
-;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    height: 47px;
-    border-radius: 12px;
-    position: absolute;
-    bottom: 161px;
-    left: max(0px, calc(50% - 60px));
-    cursor: pointer;
-    transition: 0.3s;
-}
-.hidden{
-    pointer-events: none;
-    opacity:0;
-}
-    </style>
-    <script defer src="fluidscript.js"></script>
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=alternate_email,arrow_circle_down" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Petar Petrushev | Full Stack Developer & Systems Engineer. Building robust web platforms, enterprise email infrastructure, and AI-powered solutions." />
+  <meta name="keywords" content="Petar Petrushev, Full Stack Developer, PHP Developer, Web Developer, Email Hosting, MyEmailHosts, BadiZvezda, Systems Engineer" />
+  <meta name="author" content="Petar Petrushev" />
+  <meta property="og:title" content="Petar Petrushev | Full Stack Developer & Systems Engineer" />
+  <meta property="og:description" content="Building robust web platforms, enterprise email infrastructure, and AI-powered solutions." />
+  <meta property="og:type" content="website" />
+  <title>Petar Petrushev | Full Stack Developer & Systems Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>    <canvas></canvas>
+<body>
 
-    <hero class="noe">
-    <center class="noe">
-       <img src="pfp.png" id="pfp" alt="Profile Picture"/>
-        <h1>👋 Hi, I'm Petar.</h1><br><br>
-        <span>I use</span><br>
-        <div id="langlist"><i class="devicon-php-plain colored"></i><i class="devicon-html5-plain colored"></i><i class="devicon-javascript-plain colored"></i><i class="devicon-css3-plain colored"></i><i class="devicon-typescript-plain colored"></i><i class="devicon-java-plain colored"></i><i class="devicon-python-plain colored"></i></div>
-    </center>
-
-    </hero><div id="down" class='hidden' onclick="window.scrollTo({ top: window.visualViewport.height, behavior: 'smooth' })"><span style="
-    font-size: 34px; position: realtive;top:3px;
-" class="material-symbols-rounded">
-arrow_circle_down
-</span></div>    <div id="social">
-        <a href='https://github.com/PetarPetrushev' title="Github"><i class="devicon-github-original"></i></a>
-       <a href='mailto:me@petarpetrushev.me.uk' title="Email"><span style="
-    font-size: 34px;
-    position: relative;
-    top: 2px;
-" class="material-symbols-rounded">
-alternate_email
-</span></a>
-    
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="logo-bracket">&lt;</span>PP<span class="logo-bracket">/&gt;</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="https://github.com/PetarPetrushev" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
     </div>
-    <center>
-        <br><br>
-<img src="https://camo.githubusercontent.com/13a324957ed4e733e1a31e7c73bdeb47c70ad60a3dbc4c1b7632c313e6ecfe23/68747470733a2f2f73747265616b2d73746174732e64656d6f6c61622e636f6d3f757365723d5065746172506574727573686576266c6f63616c653d656e266d6f64653d6461696c79267468656d653d6769746875625f6461726b26686964655f626f726465723d7472756526626f726465725f7261646975733d35266f726465723d33" alt="Github stats"/>
+  </nav>
 
-<br><br>
-<img src='https://camo.githubusercontent.com/9e50d82976c6796d51a4475955b4d83c413b293305a8134bd4e33fe0d1013bc9/68747470733a2f2f76697369746f722d62616467652e6c616f62692e6963752f62616467653f706167655f69643d50657461725065747275736865762e5065746172506574727573686576266c6566745f636f6c6f723d67726179266c6566745f746578743d56697369746f7273' alt="visitor count"/>
+  <section class="hero" id="hero" aria-label="Hero Section">
+    <div class="hero-orbs" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="orb orb-4"></div>
+    </div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for projects
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-name">Petar Petrushev</span>
+        <span class="hero-role">Full Stack Developer<br />&amp; Systems Engineer</span>
+      </h1>
+      <p class="hero-desc">
+        I build powerful web platforms, resilient enterprise infrastructure,
+        and AI-driven solutions, ranging from low-level server hardware to polished
+        user interfaces.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary" id="heroViewWork">View Work</a>
+        <a href="https://github.com/PetarPetrushev" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" id="heroGitHub">GitHub</a>
+        <a href="#contact" class="btn btn-ghost" id="heroGetInTouch">Contact</a>
+      </div>
+      <div class="hero-stats" aria-label="Key statistics">
+        <div class="stat">
+          <span class="stat-num">~2s</span>
+          <span class="stat-label">Email Delivery</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Ground-Up Builds</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <span class="stat-num">10+</span>
+          <span class="stat-label">Live Projects</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="visual-stack">
+        <div class="visual-card visual-card-1 glass">
+          <span class="v-icon">✉️</span>
+          <span class="v-label">Business Mail Hosting</span>
+        </div>
+        <div class="visual-card visual-card-2 glass">
+          <span class="v-icon">🤖</span>
+          <span class="v-label">Intelligent AI Routers</span>
+        </div>
+        <div class="visual-card visual-card-3 glass">
+          <span class="v-icon">💻</span>
+          <span class="v-label">Full Stack Solutions</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator" aria-label="Scroll down">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll</span>
+    </div>
+  </section>
 
+  <section class="section about-section" id="about" aria-labelledby="aboutHeading">
+    <div class="container">
+      <div class="section-label">Who I am</div>
+      <h2 class="section-title" id="aboutHeading">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm <strong>Petar Petrushev</strong>, a self-driven full stack developer and systems
+            engineer passionate about building things that actually work at scale.
+            From architecting enterprise email infrastructure to crafting polished front-ends
+            and harnessing the latest AI models, I enjoy owning the full stack from end to end.
+          </p>
+          <p>
+            My approach combines deep technical expertise with a product mindset to build complete solutions.
+            Whether it's a resilient mail server cluster, a client-facing web platform, or an
+            intelligent AI router, everything is built to be reliable, performant, and maintainable.
+          </p>
+          <p>
+            I'm passionate about automation, smart development, and getting
+            the maximum performance out of hardware and software.
+          </p>
+        </div>
+        <div class="about-cards">
+          <div class="about-card glass" id="aboutCardBackend">
+            <div class="about-icon">⚙️</div>
+            <h3>Backend & Infrastructure</h3>
+            <p>PHP, Python, Linux servers, Postfix, Dovecot, enterprise hardware management</p>
+          </div>
+          <div class="about-card glass" id="aboutCardFrontend">
+            <div class="about-icon">🎨</div>
+            <h3>Frontend & UX</h3>
+            <p>Semantic HTML5, modern CSS, JavaScript, polished, responsive interfaces</p>
+          </div>
+          <div class="about-card glass" id="aboutCardAI">
+            <div class="about-icon">🤖</div>
+            <h3>AI & Automation</h3>
+            <p>Multi-model AI platforms, intelligent routers, automation scripts and pipelines</p>
+          </div>
+          <div class="about-card glass" id="aboutCardSystems">
+            <div class="about-icon">🖥️</div>
+            <h3>Systems & DevOps</h3>
+            <p>Server management, backup failover, deployment pipelines, Bash/PowerShell</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<br><br>
+  <section class="section projects-section" id="projects" aria-labelledby="projectsHeading">
+    <div class="container">
+      <div class="section-label">What I've built</div>
+      <h2 class="section-title" id="projectsHeading">Projects</h2>
 
-<h2>My Projects</h2>
-<div id="projectcont">
-<div class="project" onclick="window.open('https://myemailhosts.com','_blank')">
-    <img src="https://myemailhosts.com/embedimg.png" alt="myemailhosts advert"/>
-    <span>MyEmailHosts.com</span>
-    <p>MyEmailHosts.com offers reliable and secure email hosting solutions for businesses.</p>
-</div>
+      <article class="project-feature" id="projectMyEmailHosts" aria-labelledby="mehTitle">
+        <div class="project-feature-content">
+          <div class="project-meta">
+            <span class="project-tag tag-infra">Infrastructure</span>
+            <span class="project-tag tag-saas">SaaS</span>
+            <span class="project-tag tag-full">Full Stack</span>
+          </div>
+          <h3 class="project-title" id="mehTitle">
+            <a href="https://MyEmailHosts.com" target="_blank" rel="noopener noreferrer" class="project-link-title">MyEmailHosts.com</a>
+          </h3>
+          <p class="project-desc">
+            A fully ground-up, white-label business email hosting solution built from scratch.
+            MyEmailHosts delivers enterprise-grade email infrastructure as a service with
+            no third-party platforms or compromises.
+          </p>
 
-<div class="project" onclick="window.open('https://bytebase.me','_blank')">
-    <img src="https://cdn.bytebase.me/bytebase-splash.png" alt="bytebase advert"/>
-    <span>ByteBase.me</span>
-    <p>ByteBase.me offers reliable and secure hosting solutions for game servers, web hosting, databases, and more.</p>
-</div>
+          <div class="project-showcase-grid">
+            <div class="showcase-card glass">
+              <div class="slide-visual slide-panel">
+                <div class="mock-panel">
+                  <div class="mock-panel-bar">
+                    <span class="mpb-dot" style="background:#ff5f57"></span>
+                    <span class="mpb-dot" style="background:#febc2e"></span>
+                    <span class="mpb-dot" style="background:#28c840"></span>
+                    <span class="mpb-title">Admin Panel · MyEmailHosts</span>
+                  </div>
+                  <div class="mock-panel-body">
+                    <div class="mp-sidebar">
+                      <div class="mp-nav-item active">📊 Dashboard</div>
+                      <div class="mp-nav-item">📧 Accounts</div>
+                      <div class="mp-nav-item">🌐 Domains</div>
+                      <div class="mp-nav-item">🔒 DNS / SPF</div>
+                      <div class="mp-nav-item">📈 Analytics</div>
+                      <div class="mp-nav-item">⚙️ Settings</div>
+                    </div>
+                    <div class="mp-main">
+                      <div class="mp-stat-row">
+                        <div class="mp-stat"><span class="mp-stat-val">2,847</span><span class="mp-stat-lbl">Mailboxes</span></div>
+                        <div class="mp-stat"><span class="mp-stat-val" style="color:#22d3ee">99.9%</span><span class="mp-stat-lbl">Uptime</span></div>
+                        <div class="mp-stat"><span class="mp-stat-val" style="color:#a78bfa">1.97s</span><span class="mp-stat-lbl">Avg. Delivery</span></div>
+                      </div>
+                      <div class="mp-chart">
+                        <div class="mp-chart-bar" style="height:40%"></div>
+                        <div class="mp-chart-bar" style="height:65%"></div>
+                        <div class="mp-chart-bar" style="height:55%"></div>
+                        <div class="mp-chart-bar" style="height:80%"></div>
+                        <div class="mp-chart-bar" style="height:70%"></div>
+                        <div class="mp-chart-bar" style="height:90%"></div>
+                        <div class="mp-chart-bar" style="height:75%"></div>
+                        <div class="mp-chart-bar" style="height:85%"></div>
+                      </div>
+                      <div class="mp-dns-row">
+                        <div class="mp-dns-chip pass">✓ SPF</div>
+                        <div class="mp-dns-chip pass">✓ DKIM</div>
+                        <div class="mp-dns-chip pass">✓ DMARC</div>
+                        <div class="mp-dns-chip pass">✓ Strict Alignment</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="showcase-caption">Admin Web Panel: Full control over domains, accounts and DNS</p>
+            </div>
 
-</div>
-<br><br><br>
-</center>
+            <div class="showcase-card glass">
+              <div class="slide-visual slide-webmail">
+                <div class="mock-webmail">
+                  <div class="mock-panel-bar">
+                    <span class="mpb-dot" style="background:#ff5f57"></span>
+                    <span class="mpb-dot" style="background:#febc2e"></span>
+                    <span class="mpb-dot" style="background:#28c840"></span>
+                    <span class="mpb-title">Roundcube Webmail</span>
+                  </div>
+                  <div class="mock-webmail-body">
+                    <div class="wm-sidebar">
+                      <div class="wm-compose-btn">✏️ Compose</div>
+                      <div class="wm-folder active">📥 Inbox <span class="wm-badge">12</span></div>
+                      <div class="wm-folder">📤 Sent</div>
+                      <div class="wm-folder">⭐ Starred</div>
+                      <div class="wm-folder">🗑️ Trash</div>
+                    </div>
+                    <div class="wm-list">
+                      <div class="wm-email selected">
+                        <span class="wm-from">Sarah K.</span>
+                        <span class="wm-subject">Project Update</span>
+                      </div>
+                      <div class="wm-email">
+                        <span class="wm-from">Alex M.</span>
+                        <span class="wm-subject">Invoice #1047</span>
+                      </div>
+                      <div class="wm-email">
+                        <span class="wm-from">Team</span>
+                        <span class="wm-subject">Weekly standup</span>
+                      </div>
+                      <div class="wm-email">
+                        <span class="wm-from">Hosting</span>
+                        <span class="wm-subject">Server status</span>
+                      </div>
+                    </div>
+                    <div class="wm-preview">
+                      <div class="wm-preview-header">Re: Project Update</div>
+                      <div class="wm-preview-body">
+                        <div class="wm-line" style="width:80%"></div>
+                        <div class="wm-line" style="width:65%"></div>
+                        <div class="wm-line" style="width:90%"></div>
+                        <div class="wm-line" style="width:55%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="showcase-caption">Roundcube Webmail: Clean browser-based email client</p>
+            </div>
+
+            <div class="showcase-card glass">
+              <div class="slide-visual slide-infra">
+                <div class="mock-infra">
+                  <div class="infra-node primary">
+                    <div class="infra-icon">📬</div>
+                    <div class="infra-label">Postfix MTA</div>
+                    <div class="infra-sub">Primary</div>
+                  </div>
+                  <div class="infra-arrows">
+                    <div class="infra-arrow-v">⬇</div>
+                  </div>
+                  <div class="infra-row">
+                    <div class="infra-node secondary">
+                      <div class="infra-icon">📂</div>
+                      <div class="infra-label">Dovecot</div>
+                      <div class="infra-sub">IMAP/POP3</div>
+                    </div>
+                    <div class="infra-node secondary">
+                      <div class="infra-icon">🛡️</div>
+                      <div class="infra-label">Failover</div>
+                      <div class="infra-sub">Backup Node</div>
+                    </div>
+                  </div>
+                  <div class="infra-arrows">
+                    <div class="infra-arrow-v">⬇</div>
+                  </div>
+                  <div class="infra-row">
+                    <div class="infra-chip">✓ SPF</div>
+                    <div class="infra-chip">✓ DKIM</div>
+                    <div class="infra-chip">✓ DMARC</div>
+                    <div class="infra-chip">✓ Strict</div>
+                  </div>
+                </div>
+              </div>
+              <p class="showcase-caption">Resilient Infrastructure: Postfix, Dovecot, backup failover and email authentication</p>
+            </div>
+          </div>
+
+          <div class="project-highlights">
+            <div class="highlight glass">
+              <span class="highlight-icon">🏗️</span>
+              <div>
+                <strong>100% Ground-Up</strong>
+                <p>Built from scratch with no outsourced panels or third-party email providers</p>
+              </div>
+            </div>
+            <div class="highlight glass">
+              <span class="highlight-icon">⚡</span>
+              <div>
+                <strong>~2s Delivery Times</strong>
+                <p>Optimised SMTP routing with consistently sub-2-second average delivery</p>
+              </div>
+            </div>
+            <div class="highlight glass">
+              <span class="highlight-icon">🔒</span>
+              <div>
+                <strong>Full Email Authentication</strong>
+                <p>SPF, DKIM and DMARC with strict alignment for maximum deliverability and security</p>
+              </div>
+            </div>
+            <div class="highlight glass">
+              <span class="highlight-icon">🛡️</span>
+              <div>
+                <strong>Resilient Infrastructure</strong>
+                <p>Backup failover nodes ensure near-zero downtime even during hardware failure</p>
+              </div>
+            </div>
+            <div class="highlight glass">
+              <span class="highlight-icon">🎛️</span>
+              <div>
+                <strong>Admin Web Panel</strong>
+                <p>Custom admin dashboard for full domain, mailbox, and DNS management</p>
+              </div>
+            </div>
+            <div class="highlight glass">
+              <span class="highlight-icon">🌐</span>
+              <div>
+                <strong>White-Label</strong>
+                <p>Fully rebrandable platform so resellers can present it as their own</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-stack-row" aria-label="Technologies used">
+            <span class="tech-chip">Postfix</span>
+            <span class="tech-chip">Dovecot</span>
+            <span class="tech-chip">Roundcube</span>
+            <span class="tech-chip">PHP</span>
+            <span class="tech-chip">MySQL</span>
+            <span class="tech-chip">Linux</span>
+            <span class="tech-chip">Bash</span>
+            <span class="tech-chip">DNS</span>
+          </div>
+          <a href="https://MyEmailHosts.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary project-cta" id="mehLink">
+            Visit MyEmailHosts.com ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="project-feature project-feature-flip" id="projectBadiZvezda" aria-labelledby="bzTitle">
+        <div class="project-feature-content">
+          <div class="project-meta">
+            <span class="project-tag tag-ai">AI Platform</span>
+            <span class="project-tag tag-full">Full Stack</span>
+          </div>
+          <h3 class="project-title" id="bzTitle">
+            <a href="https://BadiZvezda.eu" target="_blank" rel="noopener noreferrer" class="project-link-title">BadiZvezda.eu</a>
+          </h3>
+          <p class="project-desc">
+            An intelligent multi-model AI platform that brings the leading AI models
+            into one seamless interface. Chat with GPT, Claude, Gemini, and other models without
+            juggling multiple subscriptions or tabs.
+          </p>
+          <div class="bz-visual glass" aria-hidden="true">
+            <div class="bz-header">
+              <span class="bz-logo-text">🌟 BadiZvezda</span>
+              <div class="bz-model-tabs">
+                <span class="bz-tab active">Auto</span>
+                <span class="bz-tab">GPT-4o</span>
+                <span class="bz-tab">Claude</span>
+                <span class="bz-tab">Gemini</span>
+              </div>
+            </div>
+            <div class="bz-chat">
+              <div class="bz-msg user">Write me a Python function to parse JSON</div>
+              <div class="bz-router-badge">🧠 Auto-Router → GPT-4o (Code task detected)</div>
+              <div class="bz-msg ai">
+                <span class="bz-model-label">GPT-4o</span>
+                <div class="bz-code-block">
+                  <span class="bz-code-line" style="color:#a78bfa">def</span>
+                  <span class="bz-code-line" style="color:#22d3ee"> parse_json(data):</span>
+                  <span class="bz-code-line" style="color:#6b7280">  &nbsp;&nbsp;</span>
+                </div>
+              </div>
+              <div class="bz-msg user">Now explain quantum entanglement simply</div>
+              <div class="bz-router-badge">🧠 Auto-Router → Claude 3.5 (Explanation task)</div>
+              <div class="bz-msg ai">
+                <span class="bz-model-label">Claude 3.5</span>
+                <div class="bz-text-lines">
+                  <div class="bz-line" style="width:90%"></div>
+                  <div class="bz-line" style="width:75%"></div>
+                  <div class="bz-line" style="width:85%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="bz-input-bar">
+              <div class="bz-input-mock">Ask anything, the best model is chosen automatically</div>
+              <div class="bz-send">↑</div>
+            </div>
+          </div>
+          <div class="project-highlights">
+            <div class="highlight glass">
+              <span class="highlight-icon">🤖</span>
+              <div>
+                <strong>All Major AI Models</strong>
+                <p>Access GPT, Claude, Gemini, and others from a single unified interface</p>
+              </div>
+            </div>
+            <div class="highlight glass">
+              <span class="highlight-icon">🧠</span>
+              <div>
+                <strong>Intelligent Auto-Router</strong>
+                <p>Automatically routes prompts to the best AI model for the specific task type like coding, writing, or analysis</p>
+              </div>
+            </div>
+            <div class="highlight glass">
+              <span class="highlight-icon">💬</span>
+              <div>
+                <strong>Unified Experience</strong>
+                <p>One subscription and one interface to replace multiple AI services</p>
+              </div>
+            </div>
+          </div>
+          <div class="tech-stack-row" aria-label="Technologies used">
+            <span class="tech-chip">PHP</span>
+            <span class="tech-chip">JavaScript</span>
+            <span class="tech-chip">OpenAI API</span>
+            <span class="tech-chip">Anthropic API</span>
+            <span class="tech-chip">Gemini API</span>
+            <span class="tech-chip">MySQL</span>
+          </div>
+          <a href="https://BadiZvezda.eu" target="_blank" rel="noopener noreferrer" class="btn btn-primary project-cta" id="bzLink">
+            Visit BadiZvezda.eu ↗
+          </a>
+        </div>
+      </article>
+
+      <div class="other-projects" id="otherProjects" aria-labelledby="otherProjectsHeading">
+        <h3 class="subsection-title" id="otherProjectsHeading">Other Client Projects</h3>
+        <p class="other-projects-intro">
+          A selection of professional websites and web applications I've designed and developed
+          for clients across various industries.
+        </p>
+        <div class="other-projects-grid">
+          <a href="https://greetmarketing.co.uk" target="_blank" rel="noopener noreferrer" class="other-project-card glass" id="cardGreet" aria-label="Greet Marketing website">
+            <div class="opc-icon">📣</div>
+            <div class="opc-content">
+              <h4>GreetMarketing.co.uk</h4>
+              <p>Marketing agency website with bold branding, lead generation focus, and a polished digital presence.</p>
+              <span class="opc-tag">Marketing</span>
+              <span class="opc-tag">Agency</span>
+            </div>
+            <span class="opc-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="https://studio-307.co.uk" target="_blank" rel="noopener noreferrer" class="other-project-card glass" id="cardStudio307" aria-label="Studio 307 website">
+            <div class="opc-icon">🏛️</div>
+            <div class="opc-content">
+              <h4>studio-307.co.uk</h4>
+              <p>Architecture firm website featuring an elegant portfolio showcase and project galleries.</p>
+              <span class="opc-tag">Architecture</span>
+              <span class="opc-tag">Portfolio</span>
+            </div>
+            <span class="opc-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section skills-section" id="skills" aria-labelledby="skillsHeading">
+    <div class="container">
+      <div class="section-label">What I know</div>
+      <h2 class="section-title" id="skillsHeading">Skills &amp; Expertise</h2>
+
+      <div class="skills-grid">
+        <div class="skill-category glass" id="skillCoreWeb">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">💻</span>
+            <h3>Core Web Development</h3>
+            <span class="skill-level expert">Expert</span>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar-item" aria-label="PHP skill level 95%">
+              <div class="skill-bar-label"><span>PHP</span><span>95%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:95%" data-width="95"></div></div>
+            </div>
+            <div class="skill-bar-item" aria-label="JavaScript skill level 92%">
+              <div class="skill-bar-label"><span>JavaScript</span><span>92%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:92%" data-width="92"></div></div>
+            </div>
+            <div class="skill-bar-item" aria-label="HTML5 skill level 98%">
+              <div class="skill-bar-label"><span>HTML5</span><span>98%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:98%" data-width="98"></div></div>
+            </div>
+            <div class="skill-bar-item" aria-label="CSS3 skill level 95%">
+              <div class="skill-bar-label"><span>CSS3</span><span>95%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:95%" data-width="95"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category glass" id="skillPython">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">🐍</span>
+            <h3>Python</h3>
+            <span class="skill-level high">High</span>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar-item" aria-label="Python skill level 85%">
+              <div class="skill-bar-label"><span>Python</span><span>85%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:85%" data-width="85"></div></div>
+            </div>
+          </div>
+          <p class="skill-cat-note">Scripting, automation, AI integrations, data processing, tooling</p>
+        </div>
+
+        <div class="skill-category glass" id="skillScripting">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">🖥️</span>
+            <h3>Scripting &amp; Automation</h3>
+            <span class="skill-level intermediate">Intermediate</span>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar-item" aria-label="Bash skill level 72%">
+              <div class="skill-bar-label"><span>Bash / Shell</span><span>72%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:72%" data-width="72"></div></div>
+            </div>
+            <div class="skill-bar-item" aria-label="PowerShell skill level 70%">
+              <div class="skill-bar-label"><span>PowerShell</span><span>70%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:70%" data-width="70"></div></div>
+            </div>
+            <div class="skill-bar-item" aria-label="Batch skill level 68%">
+              <div class="skill-bar-label"><span>Batch</span><span>68%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:68%" data-width="68"></div></div>
+            </div>
+            <div class="skill-bar-item" aria-label="Java skill level 60%">
+              <div class="skill-bar-label"><span>Java</span><span>60%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:60%" data-width="60"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category glass" id="skillSystems">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">⚙️</span>
+            <h3>Systems &amp; Infrastructure</h3>
+            <span class="skill-level expert">Expert</span>
+          </div>
+          <div class="skills-tags">
+            <span class="skill-tag">Linux Server Management</span>
+            <span class="skill-tag">Enterprise Server Hardware</span>
+            <span class="skill-tag">Hardware Management</span>
+            <span class="skill-tag">PC / Workstation Config</span>
+            <span class="skill-tag">Postfix / Dovecot</span>
+            <span class="skill-tag">DNS &amp; Email Auth</span>
+            <span class="skill-tag">Backup &amp; Failover</span>
+            <span class="skill-tag">Virtualisation</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass" id="skillAI">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">🤖</span>
+            <h3>AI &amp; Smart Development</h3>
+            <span class="skill-level expert">Expert</span>
+          </div>
+          <div class="skills-tags">
+            <span class="skill-tag">Multi-Model AI Integration</span>
+            <span class="skill-tag">Intelligent Routing Logic</span>
+            <span class="skill-tag">AI-Accelerated Development</span>
+            <span class="skill-tag">Prompt Engineering</span>
+            <span class="skill-tag">OpenAI / Anthropic APIs</span>
+            <span class="skill-tag">Gemini API</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass" id="skillDevPractices">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">🚀</span>
+            <h3>Dev Practices &amp; More</h3>
+            <span class="skill-level expert">Expert</span>
+          </div>
+          <div class="skills-tags">
+            <span class="skill-tag">MySQL / MariaDB</span>
+            <span class="skill-tag">Reliable Deployment</span>
+            <span class="skill-tag">Debugging &amp; Troubleshooting</span>
+            <span class="skill-tag">Performance Optimisation</span>
+            <span class="skill-tag">Security Hardening</span>
+            <span class="skill-tag">Software Automation</span>
+            <span class="skill-tag">Cross-Platform Support</span>
+            <span class="skill-tag">Documentation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-section" id="contact" aria-labelledby="contactHeading">
+    <div class="container">
+      <div class="section-label">Let's talk</div>
+      <h2 class="section-title" id="contactHeading">Get in Touch</h2>
+      <div class="contact-inner">
+        <div class="contact-text">
+          <p>
+            Whether you have a project in mind, need a resilient infrastructure solution,
+            want to integrate AI into your product, or just want to chat about tech,
+            I would love to hear from you.
+          </p>
+          <p>Drop me an email and I will get back to you as soon as possible.</p>
+        </div>
+        <a href="mailto:me@petarpetrushev.me.uk" class="contact-email-btn glass" id="contactEmailBtn" aria-label="Send email to Petar Petrushev">
+          <div class="contact-email-icon">✉️</div>
+          <div class="contact-email-text">
+            <span class="contact-email-label">Email me at</span>
+            <span class="contact-email-addr">me@petarpetrushev.me.uk</span>
+          </div>
+          <span class="contact-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#hero" class="nav-logo footer-logo" aria-label="Back to top">
+          <span class="logo-bracket">&lt;</span>PP<span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-copy">
+          &copy; <span id="footerYear"></span> Petar Petrushev. All rights reserved.
+        </p>
+        <div class="footer-links">
+          <a href="#about" class="footer-link">About</a>
+          <a href="#projects" class="footer-link">Projects</a>
+          <a href="#skills" class="footer-link">Skills</a>
+          <a href="https://github.com/PetarPetrushev" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+          <a href="#" class="footer-link" id="privacyLink">Privacy Policy</a>
+          <a href="mailto:me@petarpetrushev.me.uk" class="footer-link">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="privacyModal" aria-hidden="true" role="dialog" aria-labelledby="privacyTitle">
+    <div class="modal-content glass">
+      <button class="modal-close" id="privacyClose" aria-label="Close privacy policy">&times;</button>
+      <h3 class="modal-title" id="privacyTitle">Privacy Policy</h3>
+      <div class="modal-body">
+        <p>This policy details how your information is handled when visiting this website.</p>
+        <h4>Server Logs and IP Addresses</h4>
+        <p>To ensure security, performance, and reliability, standard connection details including your IP address, browser type, referrer, and timestamps are automatically recorded in server logs during your visit.</p>
+        <h4>Cookies</h4>
+        <p>This website may use essential cookies to maintain system functionality and preferences. You can disable cookies in your browser settings if preferred.</p>
+        <h4>Data Security</h4>
+        <p>Standard industry measures are in place to safeguard the infrastructure. No personal information is sold, rented, or distributed to third parties.</p>
+        <h4>Contact</h4>
+        <p>For any questions regarding privacy practices, contact me at <a href="mailto:me@petarpetrushev.me.uk">me@petarpetrushev.me.uk</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
 </body>
-<script>
-document.body.addEventListener('touchstart', (e) => {
-  document.getElementById('down').classList.remove('hidden')
-})
-
-</script>
 </html>

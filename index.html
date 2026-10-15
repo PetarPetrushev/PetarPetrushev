@@ -3,684 +3,1859 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Petar Petrushev | Full Stack Developer & Systems Engineer. Building robust web platforms, enterprise email infrastructure, and AI-powered solutions." />
-  <meta name="keywords" content="Petar Petrushev, Full Stack Developer, PHP Developer, Web Developer, Email Hosting, MyEmailHosts, BadiZvezda, Systems Engineer" />
+  <title>Petar Petrushev | Full Stack Developer &amp; Systems Engineer</title>
+  <meta name="description" content="Petar Petrushev is a Full Stack Developer and Systems Engineer specialising in enterprise email infrastructure, Linux administration, AI orchestration and development, custom web platforms, and automated software." />
+  <meta name="keywords" content="Petar Petrushev, Full Stack Developer, Systems Engineer, AI Orchestration, AI Assisted Development, AI Solutions, Linux Admin, Postfix, Dovecot, MyEmailHosts, BadiZvezda, PHP, Python, Django, OpenRouter API" />
   <meta name="author" content="Petar Petrushev" />
-  <meta property="og:title" content="Petar Petrushev | Full Stack Developer & Systems Engineer" />
-  <meta property="og:description" content="Building robust web platforms, enterprise email infrastructure, and AI-powered solutions." />
+  <link rel="canonical" href="https://petarpetrushev.me.uk/" />
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <title>Petar Petrushev | Full Stack Developer & Systems Engineer</title>
+  <meta property="og:url" content="https://petarpetrushev.me.uk/" />
+  <meta property="og:title" content="Petar Petrushev | Full Stack Developer &amp; Systems Engineer" />
+  <meta property="og:description" content="Building resilient email infrastructure, custom web platforms, automated software, and production AI solutions." />
+  <meta property="og:site_name" content="Petar Petrushev Portfolio" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://petarpetrushev.me.uk/" />
+  <meta name="twitter:title" content="Petar Petrushev | Full Stack Developer &amp; Systems Engineer" />
+  <meta name="twitter:description" content="Building resilient email infrastructure, custom web platforms, automated software, and production AI solutions." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Structured Data (JSON-LD) for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://petarpetrushev.me.uk/#person",
+        "name": "Petar Petrushev",
+        "jobTitle": "Full Stack Developer & Systems Engineer",
+        "url": "https://petarpetrushev.me.uk/",
+        "sameAs": [
+          "https://github.com/PetarPetrushev",
+          "https://www.linkedin.com/in/petar-petrushev-5b90b0277"
+        ],
+        "email": "mailto:me@petarpetrushev.me.uk",
+        "knowsAbout": [
+          "Full Stack Web Development",
+          "Linux Systems Administration",
+          "Windows Server Administration",
+          "Email Infrastructure (Postfix, Dovecot)",
+          "Cloudflare Workers",
+          "VPS Deployment & Cloud Providers",
+          "Third-Party APIs (Stripe, OpenRouter, Discord)",
+          "AI Orchestration & Multi-Model Routing",
+          "AI Planning & Architecture",
+          "AI-Assisted Development",
+          "Developing Custom AI Solutions",
+          "PHP",
+          "Python",
+          "Django",
+          "JavaScript",
+          "S3-Compatible Object Storage"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://petarpetrushev.me.uk/#website",
+        "url": "https://petarpetrushev.me.uk/",
+        "name": "Petar Petrushev Portfolio",
+        "author": {
+          "@id": "https://petarpetrushev.me.uk/#person"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* CSS Variables: Automated Light & Dark Mode */
+    :root {
+      /* Shared Tokens */
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-base: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 22px;
+      --container-max: 1140px;
+    }
+
+    /* Dark Mode Defaults (system default or fallback) */
+    :root {
+      --bg: #090c10;
+      --bg-surface: #0f141c;
+      --bg-surface-elevated: #151b26;
+      --bg-card: rgba(17, 24, 36, 0.75);
+      --bg-card-hover: rgba(22, 31, 46, 0.95);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.16);
+      --border-highlight: rgba(59, 130, 246, 0.4);
+      --text-main: #f3f6fa;
+      --text-secondary: #94a3b8;
+      --text-tertiary: #64748b;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --accent-subtle: rgba(37, 99, 235, 0.12);
+      --accent-text: #60a5fa;
+      --success: #10b981;
+      --success-subtle: rgba(16, 185, 129, 0.12);
+      --nav-bg: rgba(9, 12, 16, 0.85);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+      --grid-line: rgba(255, 255, 255, 0.03);
+    }
+
+    /* Automated Light Mode (OS preference) */
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --bg-surface: #ffffff;
+        --bg-surface-elevated: #f1f5f9;
+        --bg-card: rgba(255, 255, 255, 0.9);
+        --bg-card-hover: #ffffff;
+        --border: rgba(15, 23, 42, 0.09);
+        --border-strong: rgba(15, 23, 42, 0.18);
+        --border-highlight: rgba(37, 99, 235, 0.45);
+        --text-main: #0f172a;
+        --text-secondary: #475569;
+        --text-tertiary: #64748b;
+        --accent: #2563eb;
+        --accent-hover: #1d4ed8;
+        --accent-subtle: rgba(37, 99, 235, 0.08);
+        --accent-text: #1d4ed8;
+        --success: #059669;
+        --success-subtle: rgba(5, 150, 105, 0.1);
+        --nav-bg: rgba(248, 250, 252, 0.88);
+        --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+        --shadow-md: 0 6px 18px rgba(15, 23, 42, 0.08);
+        --shadow-lg: 0 14px 32px rgba(15, 23, 42, 0.1);
+        --grid-line: rgba(15, 23, 42, 0.035);
+      }
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Subtle Architectural Background Grid */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Section Headers */
+    .section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.825rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-text);
+      margin-bottom: 0.65rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+      line-height: 1.18;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
+      color: var(--text-secondary);
+      max-width: 720px;
+      line-height: 1.65;
+    }
+
+    /* Header & Navigation */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: background-color var(--transition-base), border-color var(--transition-base);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4.25rem;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: var(--font-mono);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .brand-bracket {
+      color: var(--accent-text);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+    }
+
+    .nav-link {
+      font-size: 0.925rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      padding: 0.5rem 0.25rem;
+      position: relative;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      color: var(--text-main);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--accent);
+      transition: width var(--transition-fast);
+    }
+
+    .nav-link:hover::after,
+    .nav-link:focus-visible::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+    }
+
+    .nav-btn-outline {
+      border: 1px solid var(--border-strong);
+      color: var(--text-main);
+      background-color: var(--bg-surface);
+    }
+
+    .nav-btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent-text);
+    }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      padding: 10px;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-main);
+      transition: transform var(--transition-fast), opacity var(--transition-fast);
+    }
+
+    .mobile-toggle.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .mobile-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-toggle.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding-top: 10rem;
+      padding-bottom: 6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      max-width: 820px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 5.2vw, 3.85rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      color: var(--text-main);
+      margin-bottom: 1.35rem;
+    }
+
+    .hero-title-accent {
+      color: var(--accent-text);
+      display: block;
+      font-weight: 700;
+      font-size: 0.65em;
+      letter-spacing: -0.01em;
+      margin-top: 0.45rem;
+    }
+
+    .hero-lead {
+      font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 2.25rem;
+      max-width: 740px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.75rem 1.45rem;
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+      min-height: 44px;
+      line-height: 1.2;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+      border: 1px solid var(--accent);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-surface);
+      color: var(--text-main);
+      border: 1px solid var(--border-strong);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-main);
+      background-color: var(--bg-surface-elevated);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      color: var(--text-secondary);
+      border: 1px solid transparent;
+    }
+
+    .btn-ghost:hover {
+      color: var(--text-main);
+      border-color: var(--border);
+      background-color: var(--bg-surface);
+    }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      align-items: start;
+      margin-top: 2.5rem;
+    }
+
+    .about-paragraphs p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-paragraphs strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .engineering-pillars {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .pillar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.4rem;
+      transition: border-color var(--transition-fast), transform var(--transition-fast), background-color var(--transition-fast);
+    }
+
+    .pillar-card:hover {
+      border-color: var(--border-highlight);
+      background-color: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .pillar-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pillar-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* AI Engineering & Orchestration Section */
+    .ai-section {
+      border-top: 1px solid var(--border);
+      background: var(--bg-surface);
+    }
+
+    .ai-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .ai-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color var(--transition-fast), transform var(--transition-fast), background-color var(--transition-fast);
+    }
+
+    .ai-card:hover {
+      border-color: var(--border-highlight);
+      background-color: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .ai-card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+      line-height: 1.35;
+    }
+
+    .ai-card-desc {
+      font-size: 0.925rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .ai-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .ai-mini-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface-elevated);
+      color: var(--text-tertiary);
+      border: 1px solid var(--border);
+    }
+
+    .ai-card:hover .ai-mini-tag {
+      color: var(--accent-text);
+      border-color: rgba(59, 130, 246, 0.25);
+    }
+
+    .ai-capability-banner {
+      background: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+    }
+
+    .ai-cap-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.45rem;
+    }
+
+    .ai-cap-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* Featured Projects Section */
+    .projects-wrapper {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    .featured-project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: clamp(1.75rem, 3vw, 2.75rem);
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .featured-project-card:hover {
+      border-color: var(--border-highlight);
+      box-shadow: var(--shadow-md);
+    }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .project-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface-elevated);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .project-tag.tag-accent {
+      background: var(--accent-subtle);
+      color: var(--accent-text);
+      border-color: rgba(59, 130, 246, 0.25);
+    }
+
+    .project-title {
+      font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-title a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: var(--text-main);
+    }
+
+    .project-title a:hover {
+      color: var(--accent-text);
+    }
+
+    .project-summary {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 820px;
+      margin-bottom: 1.75rem;
+    }
+
+    /* Architecture & Feature Breakdown Grid */
+    .project-features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .feature-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.15rem 1.25rem;
+    }
+
+    .feature-box-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+
+    .feature-box-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Tech Stack Pills */
+    .tech-stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .tech-pill {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      color: var(--text-main);
+    }
+
+    /* Client Projects Grid */
+    .client-projects-section {
+      margin-top: 4.5rem;
+    }
+
+    .client-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .client-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color var(--transition-fast), transform var(--transition-fast), background-color var(--transition-fast);
+      min-height: 200px;
+    }
+
+    .client-card:hover {
+      border-color: var(--border-highlight);
+      background-color: var(--bg-card-hover);
+      transform: translateY(-3px);
+    }
+
+    .client-card-top {
+      margin-bottom: 1.25rem;
+    }
+
+    .client-card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .client-card-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .client-card-tag {
+      align-self: flex-start;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-text);
+      background: var(--accent-subtle);
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .skill-category-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.5rem;
+      transition: border-color var(--transition-fast), background-color var(--transition-fast);
+    }
+
+    .skill-category-card:hover {
+      border-color: var(--border-highlight);
+      background-color: var(--bg-card-hover);
+    }
+
+    .skill-cat-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .skill-badge {
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      transition: border-color var(--transition-fast), color var(--transition-fast);
+    }
+
+    .skill-badge:hover {
+      border-color: var(--border-strong);
+      color: var(--accent-text);
+    }
+
+    /* Contact Section */
+    .contact-section {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-surface);
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-xl);
+      padding: clamp(2rem, 4vw, 3.5rem);
+      margin-top: 2.5rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .contact-copy {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .email-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 1.25rem;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .email-address {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      word-break: break-all;
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.825rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      background: var(--accent-subtle);
+      color: var(--accent-text);
+      border: 1px solid rgba(37, 99, 235, 0.25);
+      transition: all var(--transition-fast);
+      min-height: 38px;
+    }
+
+    .copy-btn:hover {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.15rem;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      transition: all var(--transition-fast);
+      min-height: 44px;
+    }
+
+    .social-link:hover {
+      border-color: var(--accent);
+      color: var(--accent-text);
+      transform: translateY(-1px);
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      color: var(--text-secondary);
+      transition: color var(--transition-fast);
+    }
+
+    .footer-link:hover {
+      color: var(--text-main);
+    }
+
+    /* Accessible Privacy Modal Dialog */
+    .privacy-modal {
+      border: none;
+      border-radius: var(--radius-lg);
+      padding: 0;
+      background: transparent;
+      max-width: 620px;
+      width: 90vw;
+      margin: auto;
+      box-shadow: var(--shadow-lg);
+      z-index: 1000;
+    }
+
+    .privacy-modal::backdrop {
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      color: var(--text-main);
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .modal-close-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 1.25rem;
+      transition: all var(--transition-fast);
+    }
+
+    .modal-close-btn:hover {
+      background-color: var(--bg-surface-elevated);
+      color: var(--text-main);
+    }
+
+    .modal-content p {
+      font-size: 0.925rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .modal-content strong {
+      color: var(--text-main);
+    }
+
+    .modal-content a {
+      color: var(--accent-text);
+      text-decoration: underline;
+    }
+
+    /* Mobile Drawer */
+    .mobile-menu {
+      position: fixed;
+      top: 4.25rem;
+      left: 0;
+      right: 0;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-strong);
+      padding: 1.5rem;
+      display: none;
+      flex-direction: column;
+      gap: 1.25rem;
+      box-shadow: var(--shadow-lg);
+      z-index: 99;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu .nav-link {
+      font-size: 1.05rem;
+      padding: 0.5rem 0;
+    }
+
+    /* Toast Notification for Clipboard Copy */
+    .toast-notice {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--text-main);
+      color: var(--bg);
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      z-index: 999;
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .toast-notice.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 900px) {
+      .about-grid,
+      .contact-card {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .nav-links,
+      .nav-btn {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 4.25rem 0;
+      }
+
+      .hero-section {
+        padding-top: 7.5rem;
+        padding-bottom: 4.5rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .email-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .copy-btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo" aria-label="Home">
-        <span class="logo-bracket">&lt;</span>PP<span class="logo-bracket">/&gt;</span>
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="https://github.com/PetarPetrushev" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <section class="hero" id="hero" aria-label="Hero Section">
-    <div class="hero-orbs" aria-hidden="true">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-      <div class="orb orb-4"></div>
-    </div>
-    <div class="hero-grid" aria-hidden="true"></div>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Available for projects
-      </div>
-      <h1 class="hero-title">
-        <span class="hero-name">Petar Petrushev</span>
-        <span class="hero-role">Full Stack Developer<br />&amp; Systems Engineer</span>
-      </h1>
-      <p class="hero-desc">
-        I build powerful web platforms, resilient enterprise infrastructure,
-        and AI-driven solutions, ranging from low-level server hardware to polished
-        user interfaces.
-      </p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary" id="heroViewWork">View Work</a>
-        <a href="https://github.com/PetarPetrushev" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" id="heroGitHub">GitHub</a>
-        <a href="#contact" class="btn btn-ghost" id="heroGetInTouch">Contact</a>
-      </div>
-      <div class="hero-stats" aria-label="Key statistics">
-        <div class="stat">
-          <span class="stat-num">~2s</span>
-          <span class="stat-label">Email Delivery</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat">
-          <span class="stat-num">100%</span>
-          <span class="stat-label">Ground-Up Builds</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat">
-          <span class="stat-num">10+</span>
-          <span class="stat-label">Live Projects</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="visual-stack">
-        <div class="visual-card visual-card-1 glass">
-          <span class="v-icon">✉️</span>
-          <span class="v-label">Business Mail Hosting</span>
-        </div>
-        <div class="visual-card visual-card-2 glass">
-          <span class="v-icon">🤖</span>
-          <span class="v-label">Intelligent AI Routers</span>
-        </div>
-        <div class="visual-card visual-card-3 glass">
-          <span class="v-icon">💻</span>
-          <span class="v-label">Full Stack Solutions</span>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-indicator" aria-label="Scroll down">
-      <div class="scroll-mouse">
-        <div class="scroll-wheel"></div>
-      </div>
-      <span>Scroll</span>
-    </div>
-  </section>
-
-  <section class="section about-section" id="about" aria-labelledby="aboutHeading">
+  <!-- Navigation Bar -->
+  <header class="site-header" role="banner">
     <div class="container">
-      <div class="section-label">Who I am</div>
-      <h2 class="section-title" id="aboutHeading">About Me</h2>
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            I'm <strong>Petar Petrushev</strong>, a self-driven full stack developer and systems
-            engineer passionate about building things that actually work at scale.
-            From architecting enterprise email infrastructure to crafting polished front-ends
-            and harnessing the latest AI models, I enjoy owning the full stack from end to end.
-          </p>
-          <p>
-            My approach combines deep technical expertise with a product mindset to build complete solutions.
-            Whether it's a resilient mail server cluster, a client-facing web platform, or an
-            intelligent AI router, everything is built to be reliable, performant, and maintainable.
-          </p>
-          <p>
-            I'm passionate about automation, smart development, and getting
-            the maximum performance out of hardware and software.
-          </p>
-        </div>
-        <div class="about-cards">
-          <div class="about-card glass" id="aboutCardBackend">
-            <div class="about-icon">⚙️</div>
-            <h3>Backend & Infrastructure</h3>
-            <p>PHP, Python, Linux servers, Postfix, Dovecot, enterprise hardware management</p>
-          </div>
-          <div class="about-card glass" id="aboutCardFrontend">
-            <div class="about-icon">🎨</div>
-            <h3>Frontend & UX</h3>
-            <p>Semantic HTML5, modern CSS, JavaScript, polished, responsive interfaces</p>
-          </div>
-          <div class="about-card glass" id="aboutCardAI">
-            <div class="about-icon">🤖</div>
-            <h3>AI & Automation</h3>
-            <p>Multi-model AI platforms, intelligent routers, automation scripts and pipelines</p>
-          </div>
-          <div class="about-card glass" id="aboutCardSystems">
-            <div class="about-icon">🖥️</div>
-            <h3>Systems & DevOps</h3>
-            <p>Server management, backup failover, deployment pipelines, Bash/PowerShell</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section projects-section" id="projects" aria-labelledby="projectsHeading">
-    <div class="container">
-      <div class="section-label">What I've built</div>
-      <h2 class="section-title" id="projectsHeading">Projects</h2>
-
-      <article class="project-feature" id="projectMyEmailHosts" aria-labelledby="mehTitle">
-        <div class="project-feature-content">
-          <div class="project-meta">
-            <span class="project-tag tag-infra">Infrastructure</span>
-            <span class="project-tag tag-saas">SaaS</span>
-            <span class="project-tag tag-full">Full Stack</span>
-          </div>
-          <h3 class="project-title" id="mehTitle">
-            <a href="https://MyEmailHosts.com" target="_blank" rel="noopener noreferrer" class="project-link-title">MyEmailHosts.com</a>
-          </h3>
-          <p class="project-desc">
-            A fully ground-up, white-label business email hosting solution built from scratch.
-            MyEmailHosts delivers enterprise-grade email infrastructure as a service with
-            no third-party platforms or compromises.
-          </p>
-
-          <div class="project-showcase-grid">
-            <div class="showcase-card glass">
-              <div class="slide-visual slide-panel">
-                <div class="mock-panel">
-                  <div class="mock-panel-bar">
-                    <span class="mpb-dot" style="background:#ff5f57"></span>
-                    <span class="mpb-dot" style="background:#febc2e"></span>
-                    <span class="mpb-dot" style="background:#28c840"></span>
-                    <span class="mpb-title">Admin Panel · MyEmailHosts</span>
-                  </div>
-                  <div class="mock-panel-body">
-                    <div class="mp-sidebar">
-                      <div class="mp-nav-item active">📊 Dashboard</div>
-                      <div class="mp-nav-item">📧 Accounts</div>
-                      <div class="mp-nav-item">🌐 Domains</div>
-                      <div class="mp-nav-item">🔒 DNS / SPF</div>
-                      <div class="mp-nav-item">📈 Analytics</div>
-                      <div class="mp-nav-item">⚙️ Settings</div>
-                    </div>
-                    <div class="mp-main">
-                      <div class="mp-stat-row">
-                        <div class="mp-stat"><span class="mp-stat-val">2,847</span><span class="mp-stat-lbl">Mailboxes</span></div>
-                        <div class="mp-stat"><span class="mp-stat-val" style="color:#22d3ee">99.9%</span><span class="mp-stat-lbl">Uptime</span></div>
-                        <div class="mp-stat"><span class="mp-stat-val" style="color:#a78bfa">1.97s</span><span class="mp-stat-lbl">Avg. Delivery</span></div>
-                      </div>
-                      <div class="mp-chart">
-                        <div class="mp-chart-bar" style="height:40%"></div>
-                        <div class="mp-chart-bar" style="height:65%"></div>
-                        <div class="mp-chart-bar" style="height:55%"></div>
-                        <div class="mp-chart-bar" style="height:80%"></div>
-                        <div class="mp-chart-bar" style="height:70%"></div>
-                        <div class="mp-chart-bar" style="height:90%"></div>
-                        <div class="mp-chart-bar" style="height:75%"></div>
-                        <div class="mp-chart-bar" style="height:85%"></div>
-                      </div>
-                      <div class="mp-dns-row">
-                        <div class="mp-dns-chip pass">✓ SPF</div>
-                        <div class="mp-dns-chip pass">✓ DKIM</div>
-                        <div class="mp-dns-chip pass">✓ DMARC</div>
-                        <div class="mp-dns-chip pass">✓ Strict Alignment</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <p class="showcase-caption">Admin Web Panel: Full control over domains, accounts and DNS</p>
-            </div>
-
-            <div class="showcase-card glass">
-              <div class="slide-visual slide-webmail">
-                <div class="mock-webmail">
-                  <div class="mock-panel-bar">
-                    <span class="mpb-dot" style="background:#ff5f57"></span>
-                    <span class="mpb-dot" style="background:#febc2e"></span>
-                    <span class="mpb-dot" style="background:#28c840"></span>
-                    <span class="mpb-title">Roundcube Webmail</span>
-                  </div>
-                  <div class="mock-webmail-body">
-                    <div class="wm-sidebar">
-                      <div class="wm-compose-btn">✏️ Compose</div>
-                      <div class="wm-folder active">📥 Inbox <span class="wm-badge">12</span></div>
-                      <div class="wm-folder">📤 Sent</div>
-                      <div class="wm-folder">⭐ Starred</div>
-                      <div class="wm-folder">🗑️ Trash</div>
-                    </div>
-                    <div class="wm-list">
-                      <div class="wm-email selected">
-                        <span class="wm-from">Sarah K.</span>
-                        <span class="wm-subject">Project Update</span>
-                      </div>
-                      <div class="wm-email">
-                        <span class="wm-from">Alex M.</span>
-                        <span class="wm-subject">Invoice #1047</span>
-                      </div>
-                      <div class="wm-email">
-                        <span class="wm-from">Team</span>
-                        <span class="wm-subject">Weekly standup</span>
-                      </div>
-                      <div class="wm-email">
-                        <span class="wm-from">Hosting</span>
-                        <span class="wm-subject">Server status</span>
-                      </div>
-                    </div>
-                    <div class="wm-preview">
-                      <div class="wm-preview-header">Re: Project Update</div>
-                      <div class="wm-preview-body">
-                        <div class="wm-line" style="width:80%"></div>
-                        <div class="wm-line" style="width:65%"></div>
-                        <div class="wm-line" style="width:90%"></div>
-                        <div class="wm-line" style="width:55%"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <p class="showcase-caption">Roundcube Webmail: Clean browser-based email client</p>
-            </div>
-
-            <div class="showcase-card glass">
-              <div class="slide-visual slide-infra">
-                <div class="mock-infra">
-                  <div class="infra-node primary">
-                    <div class="infra-icon">📬</div>
-                    <div class="infra-label">Postfix MTA</div>
-                    <div class="infra-sub">Primary</div>
-                  </div>
-                  <div class="infra-arrows">
-                    <div class="infra-arrow-v">⬇</div>
-                  </div>
-                  <div class="infra-row">
-                    <div class="infra-node secondary">
-                      <div class="infra-icon">📂</div>
-                      <div class="infra-label">Dovecot</div>
-                      <div class="infra-sub">IMAP/POP3</div>
-                    </div>
-                    <div class="infra-node secondary">
-                      <div class="infra-icon">🛡️</div>
-                      <div class="infra-label">Failover</div>
-                      <div class="infra-sub">Backup Node</div>
-                    </div>
-                  </div>
-                  <div class="infra-arrows">
-                    <div class="infra-arrow-v">⬇</div>
-                  </div>
-                  <div class="infra-row">
-                    <div class="infra-chip">✓ SPF</div>
-                    <div class="infra-chip">✓ DKIM</div>
-                    <div class="infra-chip">✓ DMARC</div>
-                    <div class="infra-chip">✓ Strict</div>
-                  </div>
-                </div>
-              </div>
-              <p class="showcase-caption">Resilient Infrastructure: Postfix, Dovecot, backup failover and email authentication</p>
-            </div>
-          </div>
-
-          <div class="project-highlights">
-            <div class="highlight glass">
-              <span class="highlight-icon">🏗️</span>
-              <div>
-                <strong>100% Ground-Up</strong>
-                <p>Built from scratch with no outsourced panels or third-party email providers</p>
-              </div>
-            </div>
-            <div class="highlight glass">
-              <span class="highlight-icon">⚡</span>
-              <div>
-                <strong>~2s Delivery Times</strong>
-                <p>Optimised SMTP routing with consistently sub-2-second average delivery</p>
-              </div>
-            </div>
-            <div class="highlight glass">
-              <span class="highlight-icon">🔒</span>
-              <div>
-                <strong>Full Email Authentication</strong>
-                <p>SPF, DKIM and DMARC with strict alignment for maximum deliverability and security</p>
-              </div>
-            </div>
-            <div class="highlight glass">
-              <span class="highlight-icon">🛡️</span>
-              <div>
-                <strong>Resilient Infrastructure</strong>
-                <p>Backup failover nodes ensure near-zero downtime even during hardware failure</p>
-              </div>
-            </div>
-            <div class="highlight glass">
-              <span class="highlight-icon">🎛️</span>
-              <div>
-                <strong>Admin Web Panel</strong>
-                <p>Custom admin dashboard for full domain, mailbox, and DNS management</p>
-              </div>
-            </div>
-            <div class="highlight glass">
-              <span class="highlight-icon">🌐</span>
-              <div>
-                <strong>White-Label</strong>
-                <p>Fully rebrandable platform so resellers can present it as their own</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="tech-stack-row" aria-label="Technologies used">
-            <span class="tech-chip">Postfix</span>
-            <span class="tech-chip">Dovecot</span>
-            <span class="tech-chip">Roundcube</span>
-            <span class="tech-chip">PHP</span>
-            <span class="tech-chip">MySQL</span>
-            <span class="tech-chip">Linux</span>
-            <span class="tech-chip">Bash</span>
-            <span class="tech-chip">DNS</span>
-          </div>
-          <a href="https://MyEmailHosts.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary project-cta" id="mehLink">
-            Visit MyEmailHosts.com ↗
-          </a>
-        </div>
-      </article>
-
-      <article class="project-feature project-feature-flip" id="projectBadiZvezda" aria-labelledby="bzTitle">
-        <div class="project-feature-content">
-          <div class="project-meta">
-            <span class="project-tag tag-ai">AI Platform</span>
-            <span class="project-tag tag-full">Full Stack</span>
-          </div>
-          <h3 class="project-title" id="bzTitle">
-            <a href="https://BadiZvezda.eu" target="_blank" rel="noopener noreferrer" class="project-link-title">BadiZvezda.eu</a>
-          </h3>
-          <p class="project-desc">
-            An intelligent multi-model AI platform that brings the leading AI models
-            into one seamless interface. Chat with GPT, Claude, Gemini, and other models without
-            juggling multiple subscriptions or tabs.
-          </p>
-          <div class="bz-visual glass" aria-hidden="true">
-            <div class="bz-header">
-              <span class="bz-logo-text">🌟 BadiZvezda</span>
-              <div class="bz-model-tabs">
-                <span class="bz-tab active">Auto</span>
-                <span class="bz-tab">GPT-4o</span>
-                <span class="bz-tab">Claude</span>
-                <span class="bz-tab">Gemini</span>
-              </div>
-            </div>
-            <div class="bz-chat">
-              <div class="bz-msg user">Write me a Python function to parse JSON</div>
-              <div class="bz-router-badge">🧠 Auto-Router → GPT-4o (Code task detected)</div>
-              <div class="bz-msg ai">
-                <span class="bz-model-label">GPT-4o</span>
-                <div class="bz-code-block">
-                  <span class="bz-code-line" style="color:#a78bfa">def</span>
-                  <span class="bz-code-line" style="color:#22d3ee"> parse_json(data):</span>
-                  <span class="bz-code-line" style="color:#6b7280">  &nbsp;&nbsp;</span>
-                </div>
-              </div>
-              <div class="bz-msg user">Now explain quantum entanglement simply</div>
-              <div class="bz-router-badge">🧠 Auto-Router → Claude 3.5 (Explanation task)</div>
-              <div class="bz-msg ai">
-                <span class="bz-model-label">Claude 3.5</span>
-                <div class="bz-text-lines">
-                  <div class="bz-line" style="width:90%"></div>
-                  <div class="bz-line" style="width:75%"></div>
-                  <div class="bz-line" style="width:85%"></div>
-                </div>
-              </div>
-            </div>
-            <div class="bz-input-bar">
-              <div class="bz-input-mock">Ask anything, the best model is chosen automatically</div>
-              <div class="bz-send">↑</div>
-            </div>
-          </div>
-          <div class="project-highlights">
-            <div class="highlight glass">
-              <span class="highlight-icon">🤖</span>
-              <div>
-                <strong>All Major AI Models</strong>
-                <p>Access GPT, Claude, Gemini, and others from a single unified interface</p>
-              </div>
-            </div>
-            <div class="highlight glass">
-              <span class="highlight-icon">🧠</span>
-              <div>
-                <strong>Intelligent Auto-Router</strong>
-                <p>Automatically routes prompts to the best AI model for the specific task type like coding, writing, or analysis</p>
-              </div>
-            </div>
-            <div class="highlight glass">
-              <span class="highlight-icon">💬</span>
-              <div>
-                <strong>Unified Experience</strong>
-                <p>One subscription and one interface to replace multiple AI services</p>
-              </div>
-            </div>
-          </div>
-          <div class="tech-stack-row" aria-label="Technologies used">
-            <span class="tech-chip">PHP</span>
-            <span class="tech-chip">JavaScript</span>
-            <span class="tech-chip">OpenAI API</span>
-            <span class="tech-chip">Anthropic API</span>
-            <span class="tech-chip">Gemini API</span>
-            <span class="tech-chip">MySQL</span>
-          </div>
-          <a href="https://BadiZvezda.eu" target="_blank" rel="noopener noreferrer" class="btn btn-primary project-cta" id="bzLink">
-            Visit BadiZvezda.eu ↗
-          </a>
-        </div>
-      </article>
-
-      <div class="other-projects" id="otherProjects" aria-labelledby="otherProjectsHeading">
-        <h3 class="subsection-title" id="otherProjectsHeading">Other Client Projects</h3>
-        <p class="other-projects-intro">
-          A selection of professional websites and web applications I've designed and developed
-          for clients across various industries.
-        </p>
-        <div class="other-projects-grid">
-          <a href="https://greetmarketing.co.uk" target="_blank" rel="noopener noreferrer" class="other-project-card glass" id="cardGreet" aria-label="Greet Marketing website">
-            <div class="opc-icon">📣</div>
-            <div class="opc-content">
-              <h4>GreetMarketing.co.uk</h4>
-              <p>Marketing agency website with bold branding, lead generation focus, and a polished digital presence.</p>
-              <span class="opc-tag">Marketing</span>
-              <span class="opc-tag">Agency</span>
-            </div>
-            <span class="opc-arrow" aria-hidden="true">↗</span>
-          </a>
-          <a href="https://studio-307.co.uk" target="_blank" rel="noopener noreferrer" class="other-project-card glass" id="cardStudio307" aria-label="Studio 307 website">
-            <div class="opc-icon">🏛️</div>
-            <div class="opc-content">
-              <h4>studio-307.co.uk</h4>
-              <p>Architecture firm website featuring an elegant portfolio showcase and project galleries.</p>
-              <span class="opc-tag">Architecture</span>
-              <span class="opc-tag">Portfolio</span>
-            </div>
-            <span class="opc-arrow" aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section skills-section" id="skills" aria-labelledby="skillsHeading">
-    <div class="container">
-      <div class="section-label">What I know</div>
-      <h2 class="section-title" id="skillsHeading">Skills &amp; Expertise</h2>
-
-      <div class="skills-grid">
-        <div class="skill-category glass" id="skillCoreWeb">
-          <div class="skill-cat-header">
-            <span class="skill-cat-icon">💻</span>
-            <h3>Core Web Development</h3>
-            <span class="skill-level expert">Expert</span>
-          </div>
-          <div class="skill-bars">
-            <div class="skill-bar-item" aria-label="PHP skill level 95%">
-              <div class="skill-bar-label"><span>PHP</span><span>95%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:95%" data-width="95"></div></div>
-            </div>
-            <div class="skill-bar-item" aria-label="JavaScript skill level 92%">
-              <div class="skill-bar-label"><span>JavaScript</span><span>92%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:92%" data-width="92"></div></div>
-            </div>
-            <div class="skill-bar-item" aria-label="HTML5 skill level 98%">
-              <div class="skill-bar-label"><span>HTML5</span><span>98%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:98%" data-width="98"></div></div>
-            </div>
-            <div class="skill-bar-item" aria-label="CSS3 skill level 95%">
-              <div class="skill-bar-label"><span>CSS3</span><span>95%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:95%" data-width="95"></div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill-category glass" id="skillPython">
-          <div class="skill-cat-header">
-            <span class="skill-cat-icon">🐍</span>
-            <h3>Python</h3>
-            <span class="skill-level high">High</span>
-          </div>
-          <div class="skill-bars">
-            <div class="skill-bar-item" aria-label="Python skill level 85%">
-              <div class="skill-bar-label"><span>Python</span><span>85%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:85%" data-width="85"></div></div>
-            </div>
-          </div>
-          <p class="skill-cat-note">Scripting, automation, AI integrations, data processing, tooling</p>
-        </div>
-
-        <div class="skill-category glass" id="skillScripting">
-          <div class="skill-cat-header">
-            <span class="skill-cat-icon">🖥️</span>
-            <h3>Scripting &amp; Automation</h3>
-            <span class="skill-level intermediate">Intermediate</span>
-          </div>
-          <div class="skill-bars">
-            <div class="skill-bar-item" aria-label="Bash skill level 72%">
-              <div class="skill-bar-label"><span>Bash / Shell</span><span>72%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:72%" data-width="72"></div></div>
-            </div>
-            <div class="skill-bar-item" aria-label="PowerShell skill level 70%">
-              <div class="skill-bar-label"><span>PowerShell</span><span>70%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:70%" data-width="70"></div></div>
-            </div>
-            <div class="skill-bar-item" aria-label="Batch skill level 68%">
-              <div class="skill-bar-label"><span>Batch</span><span>68%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:68%" data-width="68"></div></div>
-            </div>
-            <div class="skill-bar-item" aria-label="Java skill level 60%">
-              <div class="skill-bar-label"><span>Java</span><span>60%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w:60%" data-width="60"></div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill-category glass" id="skillSystems">
-          <div class="skill-cat-header">
-            <span class="skill-cat-icon">⚙️</span>
-            <h3>Systems &amp; Infrastructure</h3>
-            <span class="skill-level expert">Expert</span>
-          </div>
-          <div class="skills-tags">
-            <span class="skill-tag">Linux Server Management</span>
-            <span class="skill-tag">Enterprise Server Hardware</span>
-            <span class="skill-tag">Hardware Management</span>
-            <span class="skill-tag">PC / Workstation Config</span>
-            <span class="skill-tag">Postfix / Dovecot</span>
-            <span class="skill-tag">DNS &amp; Email Auth</span>
-            <span class="skill-tag">Backup &amp; Failover</span>
-            <span class="skill-tag">Virtualisation</span>
-          </div>
-        </div>
-
-        <div class="skill-category glass" id="skillAI">
-          <div class="skill-cat-header">
-            <span class="skill-cat-icon">🤖</span>
-            <h3>AI &amp; Smart Development</h3>
-            <span class="skill-level expert">Expert</span>
-          </div>
-          <div class="skills-tags">
-            <span class="skill-tag">Multi-Model AI Integration</span>
-            <span class="skill-tag">Intelligent Routing Logic</span>
-            <span class="skill-tag">AI-Accelerated Development</span>
-            <span class="skill-tag">Prompt Engineering</span>
-            <span class="skill-tag">OpenAI / Anthropic APIs</span>
-            <span class="skill-tag">Gemini API</span>
-          </div>
-        </div>
-
-        <div class="skill-category glass" id="skillDevPractices">
-          <div class="skill-cat-header">
-            <span class="skill-cat-icon">🚀</span>
-            <h3>Dev Practices &amp; More</h3>
-            <span class="skill-level expert">Expert</span>
-          </div>
-          <div class="skills-tags">
-            <span class="skill-tag">MySQL / MariaDB</span>
-            <span class="skill-tag">Reliable Deployment</span>
-            <span class="skill-tag">Debugging &amp; Troubleshooting</span>
-            <span class="skill-tag">Performance Optimisation</span>
-            <span class="skill-tag">Security Hardening</span>
-            <span class="skill-tag">Software Automation</span>
-            <span class="skill-tag">Cross-Platform Support</span>
-            <span class="skill-tag">Documentation</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section contact-section" id="contact" aria-labelledby="contactHeading">
-    <div class="container">
-      <div class="section-label">Let's talk</div>
-      <h2 class="section-title" id="contactHeading">Get in Touch</h2>
-      <div class="contact-inner">
-        <div class="contact-text">
-          <p>
-            Whether you have a project in mind, need a resilient infrastructure solution,
-            want to integrate AI into your product, or just want to chat about tech,
-            I would love to hear from you.
-          </p>
-          <p>Drop me an email and I will get back to you as soon as possible.</p>
-        </div>
-        <a href="mailto:me@petarpetrushev.me.uk" class="contact-email-btn glass" id="contactEmailBtn" aria-label="Send email to Petar Petrushev">
-          <div class="contact-email-icon">✉️</div>
-          <div class="contact-email-text">
-            <span class="contact-email-label">Email me at</span>
-            <span class="contact-email-addr">me@petarpetrushev.me.uk</span>
-          </div>
-          <span class="contact-arrow" aria-hidden="true">↗</span>
+      <div class="nav-wrapper">
+        <a href="#hero" class="brand-logo" aria-label="Petar Petrushev Home">
+          <span class="brand-bracket">&lt;</span>PP<span class="brand-bracket">/&gt;</span>
         </a>
+
+        <nav class="nav-links" aria-label="Main Navigation">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#ai" class="nav-link">AI &amp; Automation</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="https://github.com/PetarPetrushev" target="_blank" rel="noopener noreferrer" class="nav-btn nav-btn-outline" aria-label="Visit GitHub Profile">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            GitHub
+          </a>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <footer class="footer" role="contentinfo">
+  <!-- Mobile Navigation Menu Drawer -->
+  <div class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
+    <a href="#about" class="nav-link mobile-link">About</a>
+    <a href="#ai" class="nav-link mobile-link">AI &amp; Automation</a>
+    <a href="#projects" class="nav-link mobile-link">Projects</a>
+    <a href="#skills" class="nav-link mobile-link">Skills</a>
+    <a href="#contact" class="nav-link mobile-link">Contact</a>
+    <a href="https://github.com/PetarPetrushev" target="_blank" rel="noopener noreferrer" class="social-link" style="justify-content: center;">GitHub Profile</a>
+    <a href="https://www.linkedin.com/in/petar-petrushev-5b90b0277" target="_blank" rel="noopener noreferrer" class="social-link" style="justify-content: center;">LinkedIn Profile</a>
+  </div>
+
+  <main id="mainContent">
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero" aria-label="Introduction">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Petar Petrushev
+            <span class="hero-title-accent">Full Stack Developer &amp; Systems Engineer</span>
+          </h1>
+          <p class="hero-lead">
+            Building resilient business email hosting, custom web platforms, automated software, and production AI solutions from bare metal Linux configurations up to responsive user interfaces.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Featured Projects</a>
+            <a href="#ai" class="btn btn-secondary">AI Engineering &amp; Solutions</a>
+            <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about" aria-labelledby="aboutHeading">
+      <div class="container">
+        <span class="section-eyebrow">Engineering Background</span>
+        <h2 class="section-heading" id="aboutHeading">Full stack engineering with systems discipline.</h2>
+        <p class="section-desc">
+          I build and maintain production software across the full spectrum: managing server hardware, designing mail transfer protocols, creating RESTful backends, and structuring clean frontend interfaces.
+        </p>
+
+        <div class="about-grid">
+          <div class="about-paragraphs">
+            <p>
+              My approach focuses on <strong>ground-up ownership</strong>. Rather than assembling fragile third-party SaaS wrappers, I engineer reliable systems from first principles. That means understanding how the underlying Linux operating system handles sockets, how mail servers route traffic reliably, and how modern web clients render interfaces efficiently.
+            </p>
+            <p>
+              Whether deploying high-availability email clusters with Postfix and Dovecot, integrating multi-model APIs via OpenRouter, or architecting client websites with PHP, Python, and modern JavaScript, performance and reliability are the primary targets.
+            </p>
+            <p>
+              I am also an active <strong>tech tinkerer</strong> who genuinely enjoys exploring new tools and architectures. Beyond core client work, you will frequently find me spinning up virtual private servers, testing different cloud providers, deploying edge functions with Cloudflare Workers, running self-hosted services, and engineering custom bots and integrations with third-party APIs like Stripe payment workflows, OpenRouter, and Discord bot APIs.
+            </p>
+            <p>
+              Importantly, I have been <strong>coding for years before the AI boom</strong>. My technical foundations were established by building, configuring, and debugging software manually without AI assistance. I understand programming languages, networking protocols, and systems architectures from the ground up, which means I know exactly how things work under the hood with or without an assistant.
+            </p>
+            <p>
+              I take pride in clean code, strict email deliverability (SPF, DKIM, DMARC), robust failover configurations, and long-term maintainability.
+            </p>
+          </div>
+
+          <div class="engineering-pillars">
+            <div class="pillar-card">
+              <h3 class="pillar-title">Systems, VPS &amp; Infrastructure</h3>
+              <p class="pillar-desc">Linux server administration, Windows administration, VPS deployments across diverse cloud providers, Postfix MTA, Dovecot IMAP/POP3, DNS records, backup nodes, and enterprise hardware.</p>
+            </div>
+            <div class="pillar-card">
+              <h3 class="pillar-title">Edge Runtimes &amp; Third-Party APIs</h3>
+              <p class="pillar-desc">Deploying serverless edge functions with Cloudflare Workers, integrating Stripe payment processing, building Discord bots, webhooks, and unified OpenRouter API access.</p>
+            </div>
+            <div class="pillar-card">
+              <h3 class="pillar-title">Full Stack Web Architecture</h3>
+              <p class="pillar-desc">Custom web application development using PHP, Python (Django), modern JavaScript, semantic HTML5, and responsive styling without bloated dependencies.</p>
+            </div>
+            <div class="pillar-card">
+              <h3 class="pillar-title">Storage &amp; Data Integrity</h3>
+              <p class="pillar-desc">Relational databases using MySQL and MariaDB, caching layers with Redis, and scalable object storage via S3-compatible endpoints.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dedicated AI Space Section -->
+    <section class="section ai-section" id="ai" aria-labelledby="aiHeading">
+      <div class="container">
+        <span class="section-eyebrow">Applied AI &amp; Solutions</span>
+        <h2 class="section-heading" id="aiHeading">Versed in AI engineering, orchestration, and assisted development.</h2>
+        <p class="section-desc">
+          Deep practical experience across the modern AI landscape. I combine AI assistance to accelerate development workflows with architectural planning, multi-model orchestration pipelines, and building bespoke AI solutions.
+        </p>
+
+        <div class="ai-cards-grid">
+          <div class="ai-card">
+            <div>
+              <h3 class="ai-card-title">AI Assistance &amp; Assisted Development</h3>
+              <p class="ai-card-desc">
+                Working fluently alongside advanced AI models throughout the entire engineering lifecycle. From rapid prototype scaffolding, automated test generation, and deep code refactoring to diagnosing complex systems and debugging runtime issues. This enables high-velocity software delivery while strictly maintaining architectural discipline.
+              </p>
+            </div>
+            <div class="ai-card-tags">
+              <span class="ai-mini-tag">Pair Programming</span>
+              <span class="ai-mini-tag">Codebase Refactoring</span>
+              <span class="ai-mini-tag">Test Generation</span>
+              <span class="ai-mini-tag">Rapid Delivery</span>
+            </div>
+          </div>
+
+          <div class="ai-card">
+            <div>
+              <h3 class="ai-card-title">AI Planning &amp; Architectural Strategy</h3>
+              <p class="ai-card-desc">
+                Architectural design focused on matching the right intelligence to the right requirement. Evaluating model capabilities, context window economics, token budgeting, latency targets, and structured JSON schemas to ensure AI integrations are deterministic, reliable, and cost-efficient in production.
+              </p>
+            </div>
+            <div class="ai-card-tags">
+              <span class="ai-mini-tag">Token Economics</span>
+              <span class="ai-mini-tag">Context Strategies</span>
+              <span class="ai-mini-tag">JSON Schemas</span>
+              <span class="ai-mini-tag">Latency Budgets</span>
+            </div>
+          </div>
+
+          <div class="ai-card">
+            <div>
+              <h3 class="ai-card-title">AI Orchestration &amp; Multi-Model Pipelines</h3>
+              <p class="ai-card-desc">
+                Constructing coordinated multi-step execution flows, prompt chains, and automated routing pipelines. Coordinating models across frontier providers (including Anthropic, OpenAI, Meta, and Google) using OpenRouter to route coding, summarization, analysis, or extraction tasks dynamically to the best-suited model.
+              </p>
+            </div>
+            <div class="ai-card-tags">
+              <span class="ai-mini-tag">Prompt Chaining</span>
+              <span class="ai-mini-tag">Automated Routing</span>
+              <span class="ai-mini-tag">OpenRouter API</span>
+              <span class="ai-mini-tag">Multi-Model</span>
+            </div>
+          </div>
+
+          <div class="ai-card">
+            <div>
+              <h3 class="ai-card-title">Developing Custom AI Solutions</h3>
+              <p class="ai-card-desc">
+                Engineering complete AI-powered platforms and backend services from scratch. Experience includes building production platforms like BadiZvezda.eu, integrating custom tool calling, persistent conversational state, token usage tracking, and connecting language models directly into existing database workflows.
+              </p>
+            </div>
+            <div class="ai-card-tags">
+              <span class="ai-mini-tag">Custom Endpoints</span>
+              <span class="ai-mini-tag">Tool Calling</span>
+              <span class="ai-mini-tag">Database Integration</span>
+              <span class="ai-mini-tag">State Management</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ai-capability-banner">
+          <h4 class="ai-cap-title">Built on Pre-AI Foundations</h4>
+          <p class="ai-cap-text">
+            Having coded for years prior to the rise of modern LLMs, my work is grounded in traditional software engineering and systems fundamentals. I know how to design, build, and debug complex production systems entirely without AI assistance. In my workflow, AI serves as an operational force multiplier for velocity and orchestration, directed by genuine engineering competence rather than relied on as a crutch.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="section projects-section" id="projects" aria-labelledby="projectsHeading">
+      <div class="container">
+        <span class="section-eyebrow">Selected Work</span>
+        <h2 class="section-heading" id="projectsHeading">Featured Systems &amp; Deployments</h2>
+        <p class="section-desc">
+          Key infrastructure and software platforms developed from scratch, handling production workloads.
+        </p>
+
+        <div class="projects-wrapper">
+          <!-- Featured Project 1: MyEmailHosts.com -->
+          <article class="featured-project-card" id="projectMyEmailHosts">
+            <div class="project-header">
+              <div class="project-tags">
+                <span class="project-tag tag-accent">Enterprise Infrastructure</span>
+                <span class="project-tag">SaaS</span>
+                <span class="project-tag">Ground-Up Build</span>
+              </div>
+            </div>
+
+            <h3 class="project-title">
+              <a href="https://MyEmailHosts.com" target="_blank" rel="noopener noreferrer">
+                MyEmailHosts.com
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17l9.2-9.2M17 17V8H8"/>
+                </svg>
+              </a>
+            </h3>
+
+            <p class="project-summary">
+              A ground-up business email hosting platform designed for direct reliability, control, and performance. Built entirely from scratch without reliance on third-party cPanel licenses or hosted email resellers. Provides an independent, white-label mail ecosystem with sub-2-second delivery and comprehensive security authentication.
+            </p>
+
+            <div class="project-features-grid">
+              <div class="feature-box">
+                <h4 class="feature-box-title">Custom MTA &amp; Routing Engine</h4>
+                <p class="feature-box-desc">Hardened Postfix configuration with custom SMTP queuing and optimized outbound delivery routing for clean sender reputation.</p>
+              </div>
+              <div class="feature-box">
+                <h4 class="feature-box-title">Strict Authentication Architecture</h4>
+                <p class="feature-box-desc">Automated validation for SPF, DKIM, and DMARC alignment protocols to guarantee high inbox deliverability.</p>
+              </div>
+              <div class="feature-box">
+                <h4 class="feature-box-title">Failover &amp; Storage Clustering</h4>
+                <p class="feature-box-desc">Dovecot IMAP/POP3 storage engines connected to backup failover nodes for uninterrupted mailbox availability.</p>
+              </div>
+              <div class="feature-box">
+                <h4 class="feature-box-title">Proprietary Admin Web Panel</h4>
+                <p class="feature-box-desc">Custom web panel managing domains, mailboxes, quotas, DNS propagation, and user credentials cleanly.</p>
+              </div>
+            </div>
+
+            <div class="tech-stack-list" aria-label="Technologies used for MyEmailHosts">
+              <span class="tech-pill">Postfix</span>
+              <span class="tech-pill">Dovecot</span>
+              <span class="tech-pill">Roundcube</span>
+              <span class="tech-pill">PHP</span>
+              <span class="tech-pill">MySQL</span>
+              <span class="tech-pill">Linux</span>
+              <span class="tech-pill">Bash</span>
+              <span class="tech-pill">DNS Protocols</span>
+            </div>
+
+            <div>
+              <a href="https://MyEmailHosts.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Visit MyEmailHosts.com
+              </a>
+            </div>
+          </article>
+
+          <!-- Featured Project 2: BadiZvezda.eu -->
+          <article class="featured-project-card" id="projectBadiZvezda">
+            <div class="project-header">
+              <div class="project-tags">
+                <span class="project-tag tag-accent">Multi-Model AI Platform</span>
+                <span class="project-tag">API Integration</span>
+                <span class="project-tag">Full Stack</span>
+              </div>
+            </div>
+
+            <h3 class="project-title">
+              <a href="https://BadiZvezda.eu" target="_blank" rel="noopener noreferrer">
+                BadiZvezda.eu
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17l9.2-9.2M17 17V8H8"/>
+                </svg>
+              </a>
+            </h3>
+
+            <p class="project-summary">
+              A unified multi-model AI platform connecting multiple frontier language models in one clean, responsive workspace. Built using the OpenRouter API to allow flexible task-based model selection for coding, drafting, reasoning, and data analysis without juggling multiple separate accounts.
+            </p>
+
+            <div class="project-features-grid">
+              <div class="feature-box">
+                <h4 class="feature-box-title">OpenRouter API Backbone</h4>
+                <p class="feature-box-desc">Direct unified integration with OpenRouter API endpoints, supporting dynamic model switches and automated fallback availability.</p>
+              </div>
+              <div class="feature-box">
+                <h4 class="feature-box-title">Intelligent Auto-Router</h4>
+                <p class="feature-box-desc">Heuristic routing mechanism that analyzes prompt intent and selects the optimal model for speed, coding accuracy, or comprehension.</p>
+              </div>
+              <div class="feature-box">
+                <h4 class="feature-box-title">Session State &amp; History</h4>
+                <p class="feature-box-desc">Persistent user conversation storage, token usage tracking, and multi-turn context management with MySQL.</p>
+              </div>
+              <div class="feature-box">
+                <h4 class="feature-box-title">Lightweight Web Frontend</h4>
+                <p class="feature-box-desc">Fast, responsive UI with markdown rendering, syntax highlighting for code blocks, and instant prompt execution.</p>
+              </div>
+            </div>
+
+            <div class="tech-stack-list" aria-label="Technologies used for BadiZvezda">
+              <span class="tech-pill">PHP</span>
+              <span class="tech-pill">JavaScript</span>
+              <span class="tech-pill">OpenRouter API</span>
+              <span class="tech-pill">MySQL</span>
+              <span class="tech-pill">RESTful Architecture</span>
+            </div>
+
+            <div>
+              <a href="https://BadiZvezda.eu" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Visit BadiZvezda.eu
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Client & Live Deployments -->
+        <div class="client-projects-section">
+          <span class="section-eyebrow">Client Deployments</span>
+          <h3 class="section-heading" style="font-size: 1.75rem;">Live Client Websites &amp; Applications</h3>
+          <p class="section-desc">
+            Production web platforms built and deployed for businesses across agency, architecture, luxury property, and technical sectors.
+          </p>
+
+          <div class="client-grid">
+            <a href="https://gableoaksvillamanagement.com/" target="_blank" rel="noopener noreferrer" class="client-card">
+              <div class="client-card-top">
+                <h4 class="client-card-title">
+                  Gable Oaks Villa Management
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+                </h4>
+                <p class="client-card-desc">
+                  Luxury villa and property management website offering high-end service presentations and direct guest inquiry flows.
+                </p>
+              </div>
+              <span class="client-card-tag">Property Management</span>
+            </a>
+
+            <a href="https://aivantaged.com/" target="_blank" rel="noopener noreferrer" class="client-card">
+              <div class="client-card-top">
+                <h4 class="client-card-title">
+                  Aivantaged
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+                </h4>
+                <p class="client-card-desc">
+                  Business automation and technical solutions website highlighting software modernization and operational workflows.
+                </p>
+              </div>
+              <span class="client-card-tag">Tech &amp; Automation</span>
+            </a>
+
+            <a href="https://greetmarketing.co.uk" target="_blank" rel="noopener noreferrer" class="client-card">
+              <div class="client-card-top">
+                <h4 class="client-card-title">
+                  Greet Marketing
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+                </h4>
+                <p class="client-card-desc">
+                  Digital marketing agency website engineered for high conversion rates, fast page loads, and clear service presentation.
+                </p>
+              </div>
+              <span class="client-card-tag">Agency &amp; Marketing</span>
+            </a>
+
+            <a href="https://studio-307.co.uk" target="_blank" rel="noopener noreferrer" class="client-card">
+              <div class="client-card-top">
+                <h4 class="client-card-title">
+                  Studio 307
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+                </h4>
+                <p class="client-card-desc">
+                  Architecture and spatial design studio portfolio featuring structured project showcases and visual editorial layouts.
+                </p>
+              </div>
+              <span class="client-card-tag">Architecture &amp; Design</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Technologies Section -->
+    <section class="section skills-section" id="skills" aria-labelledby="skillsHeading">
+      <div class="container">
+        <span class="section-eyebrow">Technical Competencies</span>
+        <h2 class="section-heading" id="skillsHeading">Skills &amp; Technologies</h2>
+        <p class="section-desc">
+          Core toolkits, programming languages, and operating environments utilized in daily production work.
+        </p>
+
+        <div class="skills-grid">
+          <div class="skill-category-card">
+            <h3 class="skill-cat-title">
+              Languages &amp; Frameworks
+            </h3>
+            <div class="skill-badge-list">
+              <span class="skill-badge">PHP</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">Python</span>
+              <span class="skill-badge">Django</span>
+              <span class="skill-badge">HTML5</span>
+              <span class="skill-badge">CSS3</span>
+              <span class="skill-badge">Bootstrap</span>
+            </div>
+          </div>
+
+          <div class="skill-category-card">
+            <h3 class="skill-cat-title">
+              Systems, VPS &amp; Infrastructure
+            </h3>
+            <div class="skill-badge-list">
+              <span class="skill-badge">Linux Administration</span>
+              <span class="skill-badge">Windows Administration</span>
+              <span class="skill-badge">VPS Deployments</span>
+              <span class="skill-badge">Cloud Providers</span>
+              <span class="skill-badge">Postfix MTA</span>
+              <span class="skill-badge">Dovecot IMAP</span>
+              <span class="skill-badge">DNS Configuration</span>
+              <span class="skill-badge">Server Hardware</span>
+              <span class="skill-badge">Backup &amp; Failover</span>
+            </div>
+          </div>
+
+          <div class="skill-category-card">
+            <h3 class="skill-cat-title">
+              Edge, APIs &amp; Automation
+            </h3>
+            <div class="skill-badge-list">
+              <span class="skill-badge">Cloudflare Workers</span>
+              <span class="skill-badge">Stripe Payment API</span>
+              <span class="skill-badge">OpenRouter API</span>
+              <span class="skill-badge">Discord Bot APIs</span>
+              <span class="skill-badge">REST APIs</span>
+              <span class="skill-badge">Webhooks</span>
+              <span class="skill-badge">AI Orchestration</span>
+              <span class="skill-badge">Bash Scripting</span>
+              <span class="skill-badge">PowerShell</span>
+              <span class="skill-badge">Batch</span>
+            </div>
+          </div>
+
+          <div class="skill-category-card">
+            <h3 class="skill-cat-title">
+              Data &amp; Storage
+            </h3>
+            <div class="skill-badge-list">
+              <span class="skill-badge">MySQL</span>
+              <span class="skill-badge">MariaDB</span>
+              <span class="skill-badge">Redis</span>
+              <span class="skill-badge">S3-Compatible Endpoints</span>
+              <span class="skill-badge">Object Storage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact" aria-labelledby="contactHeading">
+      <div class="container">
+        <span class="section-eyebrow">Get in Touch</span>
+        <h2 class="section-heading" id="contactHeading">Let's discuss your next project.</h2>
+
+        <div class="contact-card">
+          <div class="contact-left">
+            <p class="contact-copy">
+              Available for full stack web development, mail infrastructure deployments, custom AI solutions, system administration, and technical consultations. Reach out directly via email or connect on professional channels.
+            </p>
+
+            <div class="email-box">
+              <span class="email-address" id="emailText">me@petarpetrushev.me.uk</span>
+              <button class="copy-btn" id="copyEmailBtn" aria-label="Copy email address to clipboard">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span id="copyBtnText">Copy Address</span>
+              </button>
+            </div>
+
+            <div class="social-links">
+              <a href="mailto:me@petarpetrushev.me.uk" class="social-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Send Direct Email
+              </a>
+              <a href="https://github.com/PetarPetrushev" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/petar-petrushev-5b90b0277" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-right">
+            <div class="pillar-card" style="margin-bottom: 1rem;">
+              <h3 class="pillar-title">Availability</h3>
+              <p class="pillar-desc">Open for contract engineering, systems consulting, and select full stack build engagements.</p>
+            </div>
+            <div class="pillar-card">
+              <h3 class="pillar-title">Direct Response</h3>
+              <p class="pillar-desc">Incoming email inquiries sent to me@petarpetrushev.me.uk receive a direct reply within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-inner">
-        <a href="#hero" class="nav-logo footer-logo" aria-label="Back to top">
-          <span class="logo-bracket">&lt;</span>PP<span class="logo-bracket">/&gt;</span>
-        </a>
-        <p class="footer-copy">
-          &copy; <span id="footerYear"></span> Petar Petrushev. All rights reserved.
-        </p>
-        <div class="footer-links">
+        <div>
+          <p>&copy; <span id="currentYear"></span> Petar Petrushev. All rights reserved.</p>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer Navigation">
           <a href="#about" class="footer-link">About</a>
+          <a href="#ai" class="footer-link">AI &amp; Automation</a>
           <a href="#projects" class="footer-link">Projects</a>
           <a href="#skills" class="footer-link">Skills</a>
           <a href="https://github.com/PetarPetrushev" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
-          <a href="#" class="footer-link" id="privacyLink">Privacy Policy</a>
-          <a href="mailto:me@petarpetrushev.me.uk" class="footer-link">Contact</a>
-        </div>
+          <a href="https://www.linkedin.com/in/petar-petrushev-5b90b0277" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+          <button class="footer-link" id="openPrivacyBtn" aria-haspopup="dialog" style="text-decoration: underline; background: none; border: none; padding: 0;">Privacy Policy</button>
+        </nav>
       </div>
     </div>
   </footer>
 
-  <div class="modal-overlay" id="privacyModal" aria-hidden="true" role="dialog" aria-labelledby="privacyTitle">
-    <div class="modal-content glass">
-      <button class="modal-close" id="privacyClose" aria-label="Close privacy policy">&times;</button>
-      <h3 class="modal-title" id="privacyTitle">Privacy Policy</h3>
-      <div class="modal-body">
-        <p>This policy details how your information is handled when visiting this website.</p>
-        <h4>Server Logs and IP Addresses</h4>
-        <p>To ensure security, performance, and reliability, standard connection details including your IP address, browser type, referrer, and timestamps are automatically recorded in server logs during your visit.</p>
-        <h4>Cookies</h4>
-        <p>This website may use essential cookies to maintain system functionality and preferences. You can disable cookies in your browser settings if preferred.</p>
-        <h4>Data Security</h4>
-        <p>Standard industry measures are in place to safeguard the infrastructure. No personal information is sold, rented, or distributed to third parties.</p>
-        <h4>Contact</h4>
-        <p>For any questions regarding privacy practices, contact me at <a href="mailto:me@petarpetrushev.me.uk">me@petarpetrushev.me.uk</a>.</p>
+  <!-- Accessible Privacy Modal Dialog -->
+  <dialog class="privacy-modal" id="privacyDialog" aria-labelledby="privacyDialogTitle" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="privacyDialogTitle">Privacy Policy</h3>
+        <button class="modal-close-btn" id="closePrivacyBtn" aria-label="Close Privacy Policy dialog">&times;</button>
+      </div>
+      <div class="modal-content">
+        <p>
+          This website is statically hosted using <strong>GitHub Pages</strong>. The hosting platform automatically collects standard server log information when pages are served.
+        </p>
+        <p>
+          <strong>What is logged:</strong> Standard HTTP request data including the visitor IP address, user-agent header, referring URL, and the timestamp of access. This information is utilized by GitHub for security monitoring, DDoS mitigation, and ensuring network integrity.
+        </p>
+        <p>
+          <strong>No Trackers or Analytics:</strong> This website does not use tracking cookies, analytics services, marketing pixels, or third-party telemetry scripts. No personal data is stored, shared, sold, or distributed.
+        </p>
+        <p>
+          <strong>Contact:</strong> For inquiries regarding this privacy notice or data questions, contact directly at <a href="mailto:me@petarpetrushev.me.uk">me@petarpetrushev.me.uk</a>.
+        </p>
       </div>
     </div>
+  </dialog>
+
+  <!-- Toast Notification element -->
+  <div class="toast-notice" id="toastNotice" role="status" aria-live="polite">
+    Email copied to clipboard
   </div>
 
-  <script src="main.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      // 1. Current Year in Footer
+      const yearSpan = document.getElementById('currentYear');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+
+      // 2. Mobile Menu Toggle
+      const mobileToggle = document.getElementById('mobileToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      if (mobileToggle && mobileMenu) {
+        mobileToggle.addEventListener('click', function () {
+          const isOpen = mobileMenu.classList.toggle('open');
+          mobileToggle.classList.toggle('active', isOpen);
+          mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        mobileLinks.forEach(function (link) {
+          link.addEventListener('click', function () {
+            mobileMenu.classList.remove('open');
+            mobileToggle.classList.remove('active');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+
+        document.addEventListener('click', function (e) {
+          if (!mobileToggle.contains(e.target) && !mobileMenu.contains(e.target) && mobileMenu.classList.contains('open')) {
+            mobileMenu.classList.remove('open');
+            mobileToggle.classList.remove('active');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      // 3. Copy Email to Clipboard
+      const copyBtn = document.getElementById('copyEmailBtn');
+      const copyBtnText = document.getElementById('copyBtnText');
+      const toastNotice = document.getElementById('toastNotice');
+      const emailValue = 'me@petarpetrushev.me.uk';
+
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function () {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(emailValue).then(showCopiedState).catch(fallbackCopy);
+          } else {
+            fallbackCopy();
+          }
+        });
+      }
+
+      function fallbackCopy() {
+        const tempInput = document.createElement('input');
+        tempInput.value = emailValue;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        try {
+          document.execCommand('copy');
+          showCopiedState();
+        } catch (err) {
+          console.error('Could not copy email', err);
+        }
+        document.body.removeChild(tempInput);
+      }
+
+      function showCopiedState() {
+        if (copyBtnText) copyBtnText.textContent = 'Copied!';
+        if (toastNotice) {
+          toastNotice.classList.add('visible');
+          setTimeout(function () {
+            toastNotice.classList.remove('visible');
+          }, 2400);
+        }
+        setTimeout(function () {
+          if (copyBtnText) copyBtnText.textContent = 'Copy Address';
+        }, 2000);
+      }
+
+      // 4. Privacy Modal Handling (HTML5 <dialog>)
+      const privacyDialog = document.getElementById('privacyDialog');
+      const openPrivacyBtn = document.getElementById('openPrivacyBtn');
+      const closePrivacyBtn = document.getElementById('closePrivacyBtn');
+
+      if (privacyDialog && openPrivacyBtn && closePrivacyBtn) {
+        openPrivacyBtn.addEventListener('click', function () {
+          if (typeof privacyDialog.showModal === 'function') {
+            privacyDialog.showModal();
+          } else {
+            privacyDialog.setAttribute('open', '');
+          }
+        });
+
+        closePrivacyBtn.addEventListener('click', function () {
+          if (typeof privacyDialog.close === 'function') {
+            privacyDialog.close();
+          } else {
+            privacyDialog.removeAttribute('open');
+          }
+        });
+
+        privacyDialog.addEventListener('click', function (event) {
+          const rect = privacyDialog.getBoundingClientRect();
+          const isInDialog = (
+            rect.top <= event.clientY &&
+            event.clientY <= rect.top + rect.height &&
+            rect.left <= event.clientX &&
+            event.clientX <= rect.left + rect.width
+          );
+          if (!isInDialog) {
+            privacyDialog.close();
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
